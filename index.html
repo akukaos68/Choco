@@ -59,13 +59,125 @@
           <div class="tarjeta-info">
             <h3>Caja Regalo</h3>
             <p>El regalo perfecto para alguien especial.</p>
-            <span class="precio">$5800</span><br>
-            <a href="#contacto" class="btn">Pedir</a>
+            <span class="precio">Desde $350</span><br>
+            <button class="btn" onclick="abrirConfigurador()">Armar mi caja</button>
           </div>
         </div>
 
       </div>
     </section>
+
+    <!-- ===== MODAL CONFIGURADOR DE CAJA ===== -->
+    <div id="modal-configurador" class="modal-overlay" aria-hidden="true">
+      <div class="modal-panel">
+
+        <!-- Botón cerrar -->
+        <button class="modal-cerrar" onclick="cerrarConfigurador()" aria-label="Cerrar">✕</button>
+
+        <!-- Encabezado del modal -->
+        <div class="modal-header">
+          <h2 class="modal-titulo">Armá tu Caja</h2>
+          <p class="modal-subtitulo">Elegí tamaño, chocolate y rellenos ♡</p>
+        </div>
+
+        <!-- Contenido scrollable -->
+        <div class="modal-body">
+
+          <!-- PASO 1: Tamaño -->
+          <div class="paso">
+            <div class="paso-titulo"><span class="paso-num">1</span> Tamaño de la caja</div>
+            <div class="opciones-tamano">
+              <button class="op-tamano activo" data-tamano="10" data-precio="350" onclick="seleccionarTamano(this)">
+                <span class="op-label">10 unidades</span>
+                <span class="op-precio">$350</span>
+              </button>
+              <button class="op-tamano" data-tamano="15" data-precio="480" onclick="seleccionarTamano(this)">
+                <span class="op-label">15 unidades</span>
+                <span class="op-precio">$480</span>
+              </button>
+              <button class="op-tamano" data-tamano="20" data-precio="600" onclick="seleccionarTamano(this)">
+                <span class="op-label">20 unidades</span>
+                <span class="op-precio">$600</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- PASO 2: Tipo de chocolate -->
+          <div class="paso">
+            <div class="paso-titulo"><span class="paso-num">2</span> Tipo de chocolate</div>
+            <div class="opciones-choco">
+              <button class="op-choco activo" onclick="seleccionarChoco(this)">Mixto</button>
+              <button class="op-choco" onclick="seleccionarChoco(this)">Blanco</button>
+              <button class="op-choco" onclick="seleccionarChoco(this)">Semiamargo</button>
+            </div>
+          </div>
+
+          <!-- PASO 3: Rellenos -->
+          <div class="paso">
+            <div class="paso-titulo">
+              <span class="paso-num">3</span> Rellenos
+              <span class="contador-info">(<span id="cuenta-actual">0</span>/<span id="cuenta-max">10</span> seleccionados)</span>
+              <button class="btn-vaciar" onclick="vaciarCaja()">Vaciar</button>
+            </div>
+
+            <!-- Visualización de la caja -->
+            <div class="caja-visual" id="caja-visual">
+              <!-- Los slots se generan con JS -->
+            </div>
+
+            <!-- Grid de rellenos -->
+            <div class="grid-rellenos">
+              <button class="relleno" data-nombre="Almendras" onclick="toggleRelleno(this)">
+                <span class="relleno-icono">🌰</span>
+                <span class="relleno-nombre">Almendras</span>
+              </button>
+              <button class="relleno" data-nombre="Café" onclick="toggleRelleno(this)">
+                <span class="relleno-icono">☕</span>
+                <span class="relleno-nombre">Café</span>
+              </button>
+              <button class="relleno" data-nombre="Coco" onclick="toggleRelleno(this)">
+                <span class="relleno-icono">🥥</span>
+                <span class="relleno-nombre">Coco</span>
+              </button>
+              <button class="relleno" data-nombre="Dulce de Leche" onclick="toggleRelleno(this)">
+                <span class="relleno-icono">🍮</span>
+                <span class="relleno-nombre">Dulce de Leche</span>
+              </button>
+              <button class="relleno" data-nombre="Frutilla" onclick="toggleRelleno(this)">
+                <span class="relleno-icono">🍓</span>
+                <span class="relleno-nombre">Frutilla</span>
+              </button>
+              <button class="relleno" data-nombre="Menta" onclick="toggleRelleno(this)">
+                <span class="relleno-icono">🌿</span>
+                <span class="relleno-nombre">Menta</span>
+              </button>
+              <button class="relleno" data-nombre="Nuez" onclick="toggleRelleno(this)">
+                <span class="relleno-icono">🫘</span>
+                <span class="relleno-nombre">Nuez</span>
+              </button>
+              <button class="relleno nuevo" data-nombre="Pistacho" onclick="toggleRelleno(this)">
+                <span class="relleno-badge">NUEVO</span>
+                <span class="relleno-icono">🍵</span>
+                <span class="relleno-nombre">Pistacho</span>
+              </button>
+            </div>
+          </div>
+
+        </div><!-- fin modal-body -->
+
+        <!-- Pie del modal: resumen + botón pedido -->
+        <div class="modal-footer">
+          <div class="resumen-pedido">
+            <span id="resumen-texto">10 unidades — Mixto</span>
+            <span class="resumen-precio" id="resumen-precio">$350</span>
+          </div>
+          <button class="btn-pedir" id="btn-pedir" onclick="enviarPedido()">
+            Completar pedido por WhatsApp
+          </button>
+        </div>
+
+      </div>
+    </div>
 
     <!-- SECCIÓN CONTACTO -->
     <section id="contacto">
@@ -83,5 +195,178 @@
       <p>© 2026 Olas de Cacao — Chocolate que te hace bien <span>♡</span></p>
     </footer>
 
+    <script>
+      // ── Estado ──────────────────────────────────────────
+      let tamanoActual = 10;
+      let precioActual = 350;
+      let chocoActual  = 'Mixto';
+      let seleccionados = {}; // { nombre: cantidad }
+
+      // ── Abrir / cerrar modal ─────────────────────────────
+      function abrirConfigurador() {
+        document.getElementById('modal-configurador').classList.add('activo');
+        document.body.style.overflow = 'hidden';
+        renderSlots();
+        actualizarContador();
+      }
+      function cerrarConfigurador() {
+        document.getElementById('modal-configurador').classList.remove('activo');
+        document.body.style.overflow = '';
+      }
+      // Cerrar al hacer click fuera del panel
+      document.getElementById('modal-configurador').addEventListener('click', function(e) {
+        if (e.target === this) cerrarConfigurador();
+      });
+
+      // ── Paso 1: Tamaño ───────────────────────────────────
+      function seleccionarTamano(btn) {
+        document.querySelectorAll('.op-tamano').forEach(b => b.classList.remove('activo'));
+        btn.classList.add('activo');
+        tamanoActual = parseInt(btn.dataset.tamano);
+        precioActual = parseInt(btn.dataset.precio);
+        document.getElementById('cuenta-max').textContent = tamanoActual;
+        // Ajustar excedentes
+        ajustarExcedentes();
+        renderSlots();
+        actualizarContador();
+        actualizarResumen();
+      }
+
+      // ── Paso 2: Chocolate ────────────────────────────────
+      function seleccionarChoco(btn) {
+        document.querySelectorAll('.op-choco').forEach(b => b.classList.remove('activo'));
+        btn.classList.add('activo');
+        chocoActual = btn.textContent.trim();
+        actualizarResumen();
+      }
+
+      // ── Paso 3: Rellenos ─────────────────────────────────
+      function totalSeleccionados() {
+        return Object.values(seleccionados).reduce((a, b) => a + b, 0);
+      }
+
+      function toggleRelleno(btn) {
+        const nombre = btn.dataset.nombre;
+        const cant = seleccionados[nombre] || 0;
+
+        if (cant > 0) {
+          // Restar uno
+          seleccionados[nombre] = cant - 1;
+          if (seleccionados[nombre] === 0) delete seleccionados[nombre];
+        } else {
+          // Agregar si hay espacio
+          if (totalSeleccionados() >= tamanoActual) {
+            btn.classList.add('shake');
+            setTimeout(() => btn.classList.remove('shake'), 400);
+            return;
+          }
+          seleccionados[nombre] = 1;
+        }
+        actualizarBadges();
+        renderSlots();
+        actualizarContador();
+      }
+
+      function actualizarBadges() {
+        document.querySelectorAll('.relleno').forEach(btn => {
+          const nombre = btn.dataset.nombre;
+          const cant = seleccionados[nombre] || 0;
+          let badge = btn.querySelector('.relleno-cant');
+          if (cant > 0) {
+            btn.classList.add('activo');
+            if (!badge) {
+              badge = document.createElement('span');
+              badge.className = 'relleno-cant';
+              btn.appendChild(badge);
+            }
+            badge.textContent = cant;
+          } else {
+            btn.classList.remove('activo');
+            if (badge) badge.remove();
+          }
+        });
+      }
+
+      function ajustarExcedentes() {
+        while (totalSeleccionados() > tamanoActual) {
+          // Quitar del último relleno con cantidad
+          const keys = Object.keys(seleccionados);
+          if (!keys.length) break;
+          const last = keys[keys.length - 1];
+          seleccionados[last]--;
+          if (seleccionados[last] === 0) delete seleccionados[last];
+        }
+        actualizarBadges();
+      }
+
+      function vaciarCaja() {
+        seleccionados = {};
+        actualizarBadges();
+        renderSlots();
+        actualizarContador();
+      }
+
+      function actualizarContador() {
+        const total = totalSeleccionados();
+        document.getElementById('cuenta-actual').textContent = total;
+        document.getElementById('cuenta-max').textContent = tamanoActual;
+      }
+
+      // ── Visualización de slots ───────────────────────────
+      const EMOJIS = {
+        'Almendras': '🌰', 'Café': '☕', 'Coco': '🥥',
+        'Dulce de Leche': '🍮', 'Frutilla': '🍓',
+        'Menta': '🌿', 'Nuez': '🫘', 'Pistacho': '🍵'
+      };
+
+      function renderSlots() {
+        const contenedor = document.getElementById('caja-visual');
+        contenedor.innerHTML = '';
+        // Expandir seleccionados a array de slots llenos
+        const llenos = [];
+        for (const [nombre, cant] of Object.entries(seleccionados)) {
+          for (let i = 0; i < cant; i++) llenos.push(nombre);
+        }
+        for (let i = 0; i < tamanoActual; i++) {
+          const slot = document.createElement('div');
+          slot.className = 'slot' + (llenos[i] ? ' slot-lleno' : '');
+          slot.textContent = llenos[i] ? EMOJIS[llenos[i]] || '🍫' : '';
+          slot.title = llenos[i] || '';
+          contenedor.appendChild(slot);
+        }
+      }
+
+      // ── Resumen y WhatsApp ───────────────────────────────
+      function actualizarResumen() {
+        document.getElementById('resumen-texto').textContent =
+          `${tamanoActual} unidades — ${chocoActual}`;
+        document.getElementById('resumen-precio').textContent = `$${precioActual}`;
+      }
+
+      function enviarPedido() {
+        if (totalSeleccionados() === 0) {
+          alert('¡Agregá al menos un relleno a tu caja! 🍫');
+          return;
+        }
+        const detalleRellenos = Object.entries(seleccionados)
+          .map(([k, v]) => `${v}x ${k}`)
+          .join(', ');
+        const mensaje =
+          `¡Hola Olas de Cacao! 🍫 Quiero armar mi caja:\n` +
+          `• Tamaño: ${tamanoActual} unidades\n` +
+          `• Chocolate: ${chocoActual}\n` +
+          `• Rellenos: ${detalleRellenos}\n` +
+          `• Total: $${precioActual}\n\n` +
+          `¿Cómo coordino el pedido?`;
+        const url = `https://wa.me/598XXXXXXXX?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, '_blank');
+      }
+
+      // Inicializar slots al cargar
+      window.addEventListener('DOMContentLoaded', () => {
+        renderSlots();
+        actualizarResumen();
+      });
+    </script>
   </body>
 </html>
