@@ -247,21 +247,22 @@
 
       function toggleRelleno(btn) {
         const nombre = btn.dataset.nombre;
-        const cant = seleccionados[nombre] || 0;
-
-        if (cant > 0) {
-          // Restar uno
-          seleccionados[nombre] = cant - 1;
-          if (seleccionados[nombre] === 0) delete seleccionados[nombre];
-        } else {
-          // Agregar si hay espacio
-          if (totalSeleccionados() >= tamanoActual) {
-            btn.classList.add('shake');
-            setTimeout(() => btn.classList.remove('shake'), 400);
-            return;
-          }
-          seleccionados[nombre] = 1;
+        if (totalSeleccionados() >= tamanoActual) {
+          btn.classList.add('shake');
+          setTimeout(() => btn.classList.remove('shake'), 400);
+          return;
         }
+        seleccionados[nombre] = (seleccionados[nombre] || 0) + 1;
+        actualizarBadges();
+        renderSlots();
+        actualizarContador();
+      }
+
+      function quitarRelleno(event, nombre) {
+        event.stopPropagation();
+        if (!seleccionados[nombre]) return;
+        seleccionados[nombre]--;
+        if (seleccionados[nombre] === 0) delete seleccionados[nombre];
         actualizarBadges();
         renderSlots();
         actualizarContador();
@@ -272,6 +273,7 @@
           const nombre = btn.dataset.nombre;
           const cant = seleccionados[nombre] || 0;
           let badge = btn.querySelector('.relleno-cant');
+          let minus = btn.querySelector('.relleno-minus');
           if (cant > 0) {
             btn.classList.add('activo');
             if (!badge) {
@@ -280,11 +282,29 @@
               btn.appendChild(badge);
             }
             badge.textContent = cant;
+            if (!minus) {
+              minus = document.createElement('span');
+              minus.className = 'relleno-minus';
+              minus.textContent = '−';
+              minus.onclick = (e) => quitarRelleno(e, nombre);
+              btn.appendChild(minus);
+            }
           } else {
             btn.classList.remove('activo');
             if (badge) badge.remove();
+            if (minus) minus.remove();
           }
         });
+      }
+
+      function quitarRelleno(event, nombre) {
+        event.stopPropagation();
+        if (!seleccionados[nombre]) return;
+        seleccionados[nombre]--;
+        if (seleccionados[nombre] === 0) delete seleccionados[nombre];
+        actualizarBadges();
+        renderSlots();
+        actualizarContador();
       }
 
       function ajustarExcedentes() {
