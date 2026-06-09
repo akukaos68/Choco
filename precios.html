@@ -1,42 +1,210 @@
-<ul class="lista-precios">
-  <li>
-    <a href="#">Tabletas simples</a>
-    <span>$220</span>
-  </li>
-  <li>
-    <a href="#">Caja de 12 Bombones</a>
-    <span>$420</span>
-  </li>
-  <li>
-    <a href="#">Caja de 12 Mendians</a>
-    <span>$450</span>
-  </li>
-  <li>
-    <a href="#">Tabletas 60% Cacao</a>
-    <span>$190</span>
-  </li>
-  <li>
-    <a href="#">Oreos bañadas</a>
-    <span>$60 c/u</span>
-  </li>
-  <li>
-    <a href="#">Caja de 15 Bombones</a>
-    <span>$490</span>
-  </li>
-  <li>
-    <a href="#">Tableta Dubai</a>
-    <span>$300</span>
-  </li>
-  <li>
-    <a href="#">Tab. crema de Avellanas</a>
-    <span>$300</span>
-  </li>
-  <li>
-    <a href="#">Tab. Dulce de leche y oreos</a>
-    <span>$300</span>
-  </li>
-  <li>
-    <a href="#">Tab. Franui</a>
-    <span>$300</span>
-  </li>
-</ul>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precios – Olas de Cacao</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background-color: #d4a8b0;
+      background-image:
+        radial-gradient(ellipse at top left, #c89aa5 0%, transparent 55%),
+        radial-gradient(ellipse at bottom right, #c08898 0%, transparent 55%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      font-family: 'Nunito', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Flores decorativas con SVG inline */
+    .flor {
+      position: fixed;
+      pointer-events: none;
+      opacity: 0.75;
+      z-index: 0;
+    }
+    .flor-tl { top: -40px; left: -40px; width: 260px; transform: rotate(-15deg); }
+    .flor-tr { top: -20px; right: -30px; width: 200px; transform: rotate(20deg) scaleX(-1); }
+    .flor-bl { bottom: -30px; left: -20px; width: 220px; transform: rotate(10deg); }
+    .flor-br { bottom: -10px; right: -30px; width: 240px; transform: rotate(-5deg) scaleX(-1); }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      background: rgba(210, 185, 220, 0.45);
+      backdrop-filter: blur(2px);
+      border-radius: 20px;
+      padding: 2.5rem 2.2rem 2rem;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 4px 30px rgba(100, 50, 60, 0.12);
+    }
+
+    .titulo {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.2rem;
+      color: #5a3228;
+      text-align: center;
+      margin-bottom: 1.8rem;
+      line-height: 1.1;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.8rem;
+    }
+
+    ul li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.45rem 0;
+    }
+
+    ul li::before {
+      content: "•";
+      color: #5a3228;
+      font-size: 1.1rem;
+      margin-right: 0.6rem;
+      flex-shrink: 0;
+    }
+
+    ul li a {
+      color: #5a3228;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      flex: 1;
+    }
+
+    ul li a:hover {
+      text-decoration: underline;
+      opacity: 0.8;
+    }
+
+    ul li .precio {
+      color: #5a3228;
+      font-size: 1rem;
+      font-weight: 700;
+      white-space: nowrap;
+      margin-left: 1rem;
+    }
+
+    .tagline {
+      text-align: center;
+      color: #5a3228;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.5;
+      border-top: 1px solid rgba(90, 50, 40, 0.2);
+      padding-top: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Flor arriba izquierda -->
+  <svg class="flor flor-tl" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="80" cy="120" rx="55" ry="22" fill="#e8c9a0" opacity="0.7" transform="rotate(-40 80 120)"/>
+    <ellipse cx="110" cy="90" rx="50" ry="20" fill="#d4b48c" opacity="0.6" transform="rotate(-70 110 90)"/>
+    <ellipse cx="60" cy="80" rx="45" ry="18" fill="#c9a87a" opacity="0.5" transform="rotate(-20 60 80)"/>
+    <circle cx="90" cy="105" r="18" fill="#b8734a" opacity="0.8"/>
+    <circle cx="90" cy="105" r="10" fill="#7a3a1a" opacity="0.9"/>
+    <ellipse cx="50" cy="170" rx="8" ry="40" fill="#6b8c52" opacity="0.6" transform="rotate(20 50 170)"/>
+    <ellipse cx="130" cy="200" rx="8" ry="45" fill="#5a7a44" opacity="0.5" transform="rotate(-30 130 200)"/>
+    <ellipse cx="30" cy="200" rx="25" ry="12" fill="#7a9c5a" opacity="0.5" transform="rotate(15 30 200)"/>
+    <ellipse cx="150" cy="220" rx="28" ry="11" fill="#6b8c52" opacity="0.4" transform="rotate(-20 150 220)"/>
+  </svg>
+
+  <!-- Flor arriba derecha -->
+  <svg class="flor flor-tr" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="100" cy="80" rx="48" ry="20" fill="#f0d0b0" opacity="0.7" transform="rotate(30 100 80)"/>
+    <ellipse cx="80" cy="100" rx="45" ry="19" fill="#deb898" opacity="0.6" transform="rotate(60 80 100)"/>
+    <ellipse cx="120" cy="100" rx="44" ry="18" fill="#c9a880" opacity="0.5" transform="rotate(-30 120 100)"/>
+    <circle cx="100" cy="95" r="16" fill="#c08060" opacity="0.8"/>
+    <circle cx="100" cy="95" r="9" fill="#804020" opacity="0.9"/>
+    <ellipse cx="60" cy="160" rx="7" ry="38" fill="#6b8c52" opacity="0.5" transform="rotate(-10 60 160)"/>
+  </svg>
+
+  <!-- Flor abajo izquierda -->
+  <svg class="flor flor-bl" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="110" cy="100" rx="50" ry="22" fill="#f0c090" opacity="0.65" transform="rotate(-50 110 100)"/>
+    <ellipse cx="90" cy="80" rx="48" ry="20" fill="#e0a870" opacity="0.55" transform="rotate(-80 90 80)"/>
+    <ellipse cx="130" cy="80" rx="46" ry="19" fill="#d09860" opacity="0.5" transform="rotate(-20 130 80)"/>
+    <circle cx="110" cy="92" r="17" fill="#b07040" opacity="0.85"/>
+    <circle cx="110" cy="92" r="9" fill="#704020" opacity="0.9"/>
+    <ellipse cx="80" cy="170" rx="7" ry="40" fill="#7a9c5a" opacity="0.5" transform="rotate(15 80 170)"/>
+    <ellipse cx="140" cy="180" rx="7" ry="38" fill="#6b8c52" opacity="0.4" transform="rotate(-20 140 180)"/>
+  </svg>
+
+  <!-- Flor abajo derecha -->
+  <svg class="flor flor-br" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="120" cy="110" rx="52" ry="22" fill="#f5c8a0" opacity="0.7" transform="rotate(40 120 110)"/>
+    <ellipse cx="100" cy="90" rx="50" ry="21" fill="#e0b088" opacity="0.6" transform="rotate(70 100 90)"/>
+    <ellipse cx="140" cy="90" rx="48" ry="20" fill="#cfa078" opacity="0.5" transform="rotate(10 140 90)"/>
+    <circle cx="120" cy="104" r="18" fill="#b87848" opacity="0.8"/>
+    <circle cx="120" cy="104" r="10" fill="#784028" opacity="0.9"/>
+    <ellipse cx="90" cy="180" rx="8" ry="42" fill="#6b8c52" opacity="0.5" transform="rotate(10 90 180)"/>
+    <ellipse cx="150" cy="190" rx="7" ry="40" fill="#5a7a44" opacity="0.4" transform="rotate(-25 150 190)"/>
+    <ellipse cx="60" cy="200" rx="26" ry="11" fill="#7a9c5a" opacity="0.45" transform="rotate(20 60 200)"/>
+  </svg>
+
+  <div class="card">
+    <h1 class="titulo">Chocolates</h1>
+
+    <ul>
+      <li>
+        <a href="#">Tabletas simples</a>
+        <span class="precio">$220</span>
+      </li>
+      <li>
+        <a href="#">Caja de 12 Bombones</a>
+        <span class="precio">$420</span>
+      </li>
+      <li>
+        <a href="#">Caja de 12 Mendians</a>
+        <span class="precio">$450</span>
+      </li>
+      <li>
+        <a href="#">Tabletas 60% Cacao</a>
+        <span class="precio">$190</span>
+      </li>
+      <li>
+        <a href="#">Oreos bañadas</a>
+        <span class="precio">$60 c/u</span>
+      </li>
+      <li>
+        <a href="#">Caja de 15 Bombones</a>
+        <span class="precio">$490</span>
+      </li>
+      <li>
+        <a href="#">Tableta Dubai</a>
+        <span class="precio">$300</span>
+      </li>
+      <li>
+        <a href="#">Tab. crema de Avellanas</a>
+        <span class="precio">$300</span>
+      </li>
+      <li>
+        <a href="#">Tab. Dulce de leche y oreos</a>
+        <span class="precio">$300</span>
+      </li>
+      <li>
+        <a href="#">Tab. Franui</a>
+        <span class="precio">$300</span>
+      </li>
+    </ul>
+
+    <p class="tagline">¡No te pierdas nuestras<br>delicias de esta temporada!</p>
+  </div>
+
+</body>
+</html>
