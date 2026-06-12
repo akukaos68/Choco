@@ -443,7 +443,7 @@ footer span {
 /* Tamaño */
 .opciones-tamano {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 .op-tamano {
@@ -499,7 +499,7 @@ footer span {
 /* Visualización slots */
 .caja-visual {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 5px;
   background: var(--crema);
   border-radius: 16px;
