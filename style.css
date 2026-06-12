@@ -16,6 +16,7 @@
   --texto:       #4a3728;
   --blanco:      #fffaf5;
 }
+font-family: "Pinyon Script", cursive;
 
 /* ---- Reset básico ---- */
 * {
@@ -94,8 +95,16 @@ nav a:hover {
 nav a:hover::after {
   width: 100%;
 }
-
+.nav-logo {
+  font-family: "Pinyon Script", cursive;
+  font-size: 2rem;
+  color: #5a3e2b; /* el marrón del logo */
+}
 /* ===== HERO (sección inicio) ===== */
+header h1 {
+  font-family: "Pinyon Script", cursive;
+}
+
 #inicio {
   background-image: url('choco_4.jpeg');
   background-size: cover;
