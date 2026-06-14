@@ -387,14 +387,29 @@
         window.open(url, '_blank');
       }
 
-      // Inicializar slots al cargar
-      window.addEventListener('DOMContentLoaded', () => {
-        renderSlots();
-        actualizarResumen();
+
+     // Inicializar slots al cargar
+window.addEventListener('DOMContentLoaded', () => {
+  fetch('productos.json')
+    .then(res => res.json())
+    .then(data => {
+      const cajas = data.productos.filter(p => p.nombre.includes('Bombones'));
+      const botones = document.querySelectorAll('.op-tamano');
+      botones.forEach(btn => {
+        const tamano = btn.dataset.tamano;
+        const caja = cajas.find(p => p.nombre.includes(tamano));
+        if (caja) {
+          btn.querySelector('.op-precio').textContent = caja.precio;
+          btn.dataset.precio = caja.precio.replace('$', '');
+        }
       });
-    </script>
+    });
+
+  renderSlots();
+  actualizarResumen();
+});
+
     // ── Netlify Identity ───────────────────────────────
-   <script>
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", user => {
       if (!user) {
