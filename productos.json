@@ -1,0 +1,14 @@
+{
+  "productos": [
+    { "nombre": "Tabletas simples", "precio": "$220", "link": "#" },
+    { "nombre": "Caja de 6 Bombones", "precio": "$390", "link": "#" },
+    { "nombre": "Caja de 9 Mendians", "precio": "$450", "link": "#" },
+    { "nombre": "Tabletas 60% Cacao", "precio": "$190", "link": "#" },
+    { "nombre": "Oreos bañadas", "precio": "$60 c/u", "link": "#" },
+    { "nombre": "Caja de 12 Bombones", "precio": "$590", "link": "#" },
+    { "nombre": "Tableta Dubai", "precio": "$300", "link": "#" },
+    { "nombre": "Tab. crema de Avellanas", "precio": "$300", "link": "#" },
+    { "nombre": "Tab. Dulce de leche y oreos", "precio": "$300", "link": "#" },
+    { "nombre": "Tab. Franui", "precio": "$300", "link": "#" }
+  ]
+}

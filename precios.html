@@ -89,17 +89,8 @@
 <body>
   <div class="card">
     <h1 class="titulo">Chocolates</h1>
-    <ul>
-      <li><a href="#">Tabletas simples</a><span class="precio">$220</span></li>
-      <li><a href="#">Caja de 6 Bombones</a><span class="precio">$390</span></li>
-      <li><a href="#">Caja de 9 Mendians</a><span class="precio">$450</span></li>
-      <li><a href="#">Tabletas 60% Cacao</a><span class="precio">$190</span></li>
-      <li><a href="#">Oreos bañadas</a><span class="precio">$60 c/u</span></li>
-      <li><a href="#">Caja de 12 Bombones</a><span class="precio">$590</span></li>
-      <li><a href="#">Tableta Dubai</a><span class="precio">$300</span></li>
-      <li><a href="#">Tab. crema de Avellanas</a><span class="precio">$300</span></li>
-      <li><a href="#">Tab. Dulce de leche y oreos</a><span class="precio">$300</span></li>
-      <li><a href="#">Tab. Franui</a><span class="precio">$300</span></li>
+    <ul id="lista-precios">
+  <!-- Los productos se cargan con JS -->
     </ul>
     <div class="sello">
     </div>
@@ -107,4 +98,19 @@
     <p class="tagline">¡No te pierdas nuestras<br>delicias de esta temporada!</p>
   </div>
 </body>
+  <script>
+  fetch('productos.json')
+    .then(res => res.json())
+    .then(data => {
+      const lista = document.getElementById('lista-precios');
+      data.productos.forEach(p => {
+        lista.innerHTML += `
+          <li>
+            <a href="${p.link}">${p.nombre}</a>
+            <span class="precio">${p.precio}</span>
+          </li>
+        `;
+      });
+    });
+  </script>
 </html>
