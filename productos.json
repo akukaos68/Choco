@@ -44,6 +44,11 @@
       "nombre": "Tab. Franui",
       "precio": "$300",
       "link": "#"
+    },
+    {
+      "nombre": "Chocolate en rama",
+      "precio": "$ 6000",
+      "link": " #"
     }
   ]
 }
