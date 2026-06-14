@@ -16,11 +16,6 @@
       "link": "#"
     },
     {
-      "nombre": "Caja de 12 Bombones",
-      "precio": "$590",
-      "link": "#"
-    },
-    {
       "nombre": "Tableta Dubai",
       "precio": "$300",
       "link": "#"
@@ -48,6 +43,11 @@
     {
       "nombre": "Caja de 6 Bombones",
       "precio": "500",
+      "link": "#"
+    },
+    {
+      "nombre": "Caja de 12 Bombones",
+      "precio": "12000",
       "link": "#"
     }
   ]
