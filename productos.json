@@ -1,11 +1,6 @@
 {
   "productos": [
     {
-      "nombre": "Caja de 6 Bombones",
-      "precio": "$390",
-      "link": "#"
-    },
-    {
       "nombre": "Tabletas simples",
       "precio": "$220",
       "link": "#"
@@ -49,6 +44,11 @@
       "nombre": "Chocolate en rama",
       "precio": "$ 6000",
       "link": " #"
+    },
+    {
+      "nombre": "Caja de 6 Bombones",
+      "precio": "500",
+      "link": "#"
     }
   ]
 }
