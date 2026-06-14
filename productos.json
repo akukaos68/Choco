@@ -40,15 +40,8 @@
       "precio": "$ 6000",
       "link": " #"
     },
-    {
-      "nombre": "Caja de 6 Bombones",
-      "precio": "500",
-      "link": "#"
-    },
-    {
-      "nombre": "Caja de 12 Bombones",
-      "precio": "12000",
-      "link": "#"
-    }
+    { "nombre": "Caja de 6 Bombones", "precio": "$390", "tamano": "6", "link": "index.html#configurador" },
+{ "nombre": "Caja de 12 Bombones", "precio": "$590", "tamano": "12", "link": "index.html#configurador" },
+{ "nombre": "Caja de 24 Bombones", "precio": "$1100", "tamano": "24", "link": "index.html#configurador" }
   ]
 }
