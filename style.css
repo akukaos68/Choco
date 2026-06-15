@@ -169,6 +169,12 @@ header h1 {
   text-align: center;
 }
 
+.badge-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ===== SECCIÓN PRODUCTOS ===== */
 #productos {
   background-color: var(--lila-claro);
