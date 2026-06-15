@@ -42,15 +42,15 @@
       "link": "index.html#configurador"
     },
     {
+      "nombre": "Caja de 12 Bombones",
+      "precio": "690",
+      "link": "index.html#configurador"
+    },
+    {
       "nombre": "Caja de 24 Bombones",
       "precio": "$1100",
       "tamano": "24",
       "link": "index.html#configurador"
-    },
-    {
-      "nombre": "Caja de 12 Bombones",
-      "precio": "$690",
-      "link": "#"
     }
   ]
 }
