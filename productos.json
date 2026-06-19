@@ -3,37 +3,32 @@
     {
       "nombre": "Tabletas simples",
       "precio": "$220",
-      "link": "#"
+      "link": "#",
+      "tamano": "3"
     },
     {
       "nombre": "Caja de 9 Mendians",
       "precio": "$450",
-      "link": "#"
+      "link": "#",
+      "tamano": "9"
     },
     {
       "nombre": "Tabletas 60% Cacao",
       "precio": "$190",
-      "link": "#"
+      "link": "#",
+      "tamano": "4"
     },
     {
       "nombre": "Tableta Dubai",
       "precio": "$300",
-      "link": "#"
+      "link": "#",
+      "tamano": "1"
     },
     {
       "nombre": "Tab. crema de Avellanas",
       "precio": "$300",
-      "link": "#"
-    },
-    {
-      "nombre": "Tab. Dulce de leche y oreos",
-      "precio": "$300",
-      "link": "#"
-    },
-    {
-      "nombre": "Tab. Franui",
-      "precio": "$300",
-      "link": "#"
+      "link": "#",
+      "tamano": "5"
     },
     {
       "nombre": "Caja de 6 Bombones",
@@ -42,14 +37,26 @@
       "link": "index.html#configurador"
     },
     {
+      "nombre": "Tab. Franui",
+      "precio": "$300",
+      "link": "#",
+      "tamano": "9"
+    },
+    {
       "nombre": "Caja de 12 Bombones",
       "precio": "$690",
       "tamano": "12",
       "link": "index.html#configurador"
     },
     {
+      "nombre": "Tab. Dulce de leche y oreos",
+      "precio": "$300",
+      "link": "#",
+      "tamano": "7"
+    },
+    {
       "nombre": "Caja de 24 Bombones",
-      "precio": "$1100",
+      "precio": "$6000",
       "tamano": "24",
       "link": "index.html#configurador"
     }
