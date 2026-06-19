@@ -7,9 +7,8 @@
     <title>Olas de Cacao — Chocolate que te hace bien</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
   </head>
   <body>
 
@@ -37,63 +36,62 @@
     <section id="productos">
       <h2>Nuestros Productos</h2>
 
-      <div class="grid-productos">
+      <div class="carrusel-wrapper">
+        <button class="carrusel-btn izq" onclick="moverCarrusel(-1)">‹</button>
 
-        <div class="tarjeta">
-          <img src="choco3.jpeg" alt="Caja de regalo" />
-          <div class="tarjeta-info">
-            <h3>Caja Regalo</h3>
-            <p>El regalo perfecto para alguien especial.</p>
-            <span class="precio">Desde $390</span><br>
-            <button class="btn" onclick="abrirConfigurador()">Armar mi caja</button>
-          </div>
-        </div>
-        
-        <div class="tarjeta">
-          <img src="choco 0.jpg" alt="Chocolate artesanal" />
-          <div class="tarjeta-info">
-            <h3>Tableta Clásica</h3>
-            <p>Chocolate artesanal con ingredientes seleccionados.</p>
-            <span class="precio">$2500</span><br>
-            <a href="#contacto" class="btn">Pedir</a>
-          </div>
-        </div>
+        <div class="grid-productos carrusel" id="carrusel-productos">
 
-        <div class="tarjeta">
-          <img src="Mend1.jpeg" alt="Mendiant" />
-          <div class="tarjeta-info">
-            <h3>Mendiants</h3>
-            <p>Combinaciones únicas para los más golosos.</p>
-            <span class="precio">$6200</span><br>
-            <a href="#" class="btn">Ver detalles</a>
+          <div class="tarjeta">
+            <img src="choco3.jpeg" alt="Caja de regalo" />
+            <div class="tarjeta-info">
+              <h3>Caja Regalo</h3>
+              <p>El regalo perfecto para alguien especial.</p>
+              <span class="precio">Desde $390</span><br>
+              <button class="btn" onclick="abrirConfigurador()">Armar mi caja</button>
+            </div>
           </div>
-        </div>
 
-        <div class="tarjeta">
-          <img src="choco2.jpeg" alt="Lista de Chocolates especiales" />
-          <div class="tarjeta-info">
-            <h3>Lista de precios</h3>
-            <p>Combinaciones únicas para los más golosos.</p>
-            <span class="precio">$3200</span><br>
-            <a href="precios.html" class="btn">Ver precios</a>
+          <div class="tarjeta">
+            <img src="choco 0.jpg" alt="Chocolate artesanal" />
+            <div class="tarjeta-info">
+              <h3>Tableta Clásica</h3>
+              <p>Chocolate artesanal con ingredientes seleccionados.</p>
+              <span class="precio">$2500</span><br>
+              <a href="#contacto" class="btn">Pedir</a>
+            </div>
           </div>
+
+          <div class="tarjeta">
+            <img src="Mend1.jpeg" alt="Mendiant" />
+            <div class="tarjeta-info">
+              <h3>Mendiants</h3>
+              <p>Combinaciones únicas para los más golosos.</p>
+              <span class="precio">$6200</span><br>
+              <a href="#" class="btn">Ver detalles</a>
+            </div>
+          </div>
+
         </div>
 
+        <button class="carrusel-btn der" onclick="moverCarrusel(1)">›</button>
       </div>
+
+      <!-- Fuera del carrusel: Lista de precios -->
+      <div class="tarjeta tarjeta-precios">
+        <img src="choco2.jpeg" alt="Lista de Chocolates especiales" />
+        <div class="tarjeta-info">
+          <h3>Lista de precios</h3>
+          <p>Conocé todos nuestros productos y precios.</p>
+          <a href="precios.html" class="btn">Ver precios</a>
+        </div>
+      </div>
+
     </section>
 
-    <!-- ===== MODAL CONFIGURADOR DE CAJA ===== -->
-    <div id="modal-configurador" class="modal-overlay" aria-hidden="true">
+    <!-- MODAL CONFIGURADOR -->
+    <div class="modal-overlay" id="modal-configurador">
       <div class="modal-panel">
-
-        <!-- Botón cerrar -->
-        <button class="modal-cerrar" onclick="cerrarConfigurador()" aria-label="Cerrar">✕</button>
-
-        <!-- Encabezado del modal -->
-        <div class="modal-header">
-          <h2 class="modal-titulo">Armá tu Caja</h2>
-          <p class="modal-subtitulo">Elegí tamaño, chocolate y rellenos ♡</p>
-        </div>
+        <button class="modal-cerrar" onclick="cerrarConfigurador()">✕</button>
 
         <!-- Contenido scrollable -->
         <div class="modal-body">
@@ -102,15 +100,15 @@
           <div class="paso">
             <div class="paso-titulo"><span class="paso-num">1</span> Tamaño de la caja</div>
             <div class="opciones-tamano">
-              <button class="op-tamano activo" data-tamano="6" data-precio="350" onclick="seleccionarTamano(this)">
+              <button class="op-tamano activo" data-tamano="6" data-precio="390" onclick="seleccionarTamano(this)">
                 <span class="op-label">6 unidades</span>
                 <span class="op-precio">$390</span>
               </button>
-              <button class="op-tamano" data-tamano="12" data-precio="480" onclick="seleccionarTamano(this)">
+              <button class="op-tamano" data-tamano="12" data-precio="690" onclick="seleccionarTamano(this)">
                 <span class="op-label">12 unidades</span>
-                <span class="op-precio">$590</span>
+                <span class="op-precio">$690</span>
               </button>
-              <button class="op-tamano" data-tamano="24" data-precio="600" onclick="seleccionarTamano(this)">
+              <button class="op-tamano" data-tamano="24" data-precio="1100" onclick="seleccionarTamano(this)">
                 <span class="op-label">24 unidades</span>
                 <span class="op-precio">$1100</span>
               </button>
@@ -131,7 +129,7 @@
           <div class="paso">
             <div class="paso-titulo">
               <span class="paso-num">3</span> Rellenos
-              <span class="contador-info">(<span id="cuenta-actual">0</span>/<span id="cuenta-max">10</span> seleccionados)</span>
+              <span class="contador-info">(<span id="cuenta-actual">0</span>/<span id="cuenta-max">6</span> seleccionados)</span>
               <button class="btn-vaciar" onclick="vaciarCaja()">Vaciar</button>
             </div>
 
@@ -183,8 +181,8 @@
         <!-- Pie del modal: resumen + botón pedido -->
         <div class="modal-footer">
           <div class="resumen-pedido">
-            <span id="resumen-texto">10 unidades — Mixto</span>
-            <span class="resumen-precio" id="resumen-precio">$350</span>
+            <span id="resumen-texto">6 unidades — Mixto</span>
+            <span class="resumen-precio" id="resumen-precio">$390</span>
           </div>
           <button class="btn-pedir" id="btn-pedir" onclick="enviarPedido()">
             Completar pedido por WhatsApp
@@ -192,7 +190,7 @@
         </div>
 
       </div>
-    </div>
+    </div><!-- fin modal-configurador -->
 
     <!-- SECCIÓN CONTACTO -->
     <section id="contacto">
@@ -240,7 +238,6 @@
         tamanoActual = parseInt(btn.dataset.tamano);
         precioActual = parseInt(btn.dataset.precio);
         document.getElementById('cuenta-max').textContent = tamanoActual;
-        // Ajustar excedentes
         ajustarExcedentes();
         renderSlots();
         actualizarContador();
@@ -312,19 +309,8 @@
         });
       }
 
-      function quitarRelleno(event, nombre) {
-        event.stopPropagation();
-        if (!seleccionados[nombre]) return;
-        seleccionados[nombre]--;
-        if (seleccionados[nombre] === 0) delete seleccionados[nombre];
-        actualizarBadges();
-        renderSlots();
-        actualizarContador();
-      }
-
       function ajustarExcedentes() {
         while (totalSeleccionados() > tamanoActual) {
-          // Quitar del último relleno con cantidad
           const keys = Object.keys(seleccionados);
           if (!keys.length) break;
           const last = keys[keys.length - 1];
@@ -357,7 +343,6 @@
       function renderSlots() {
         const contenedor = document.getElementById('caja-visual');
         contenedor.innerHTML = '';
-        // Expandir seleccionados a array de slots llenos
         const llenos = [];
         for (const [nombre, cant] of Object.entries(seleccionados)) {
           for (let i = 0; i < cant; i++) llenos.push(nombre);
@@ -397,40 +382,57 @@
         window.open(url, '_blank');
       }
 
+      // ── Cargar precios desde productos.json ──────────────
+      window.addEventListener('DOMContentLoaded', () => {
+        fetch('productos.json')
+          .then(res => res.json())
+          .then(data => {
+            const cajas = data.productos.filter(p => p.tamano);
+            const botones = document.querySelectorAll('.op-tamano');
+            botones.forEach(btn => {
+              const tamano = btn.dataset.tamano;
+              const caja = cajas.find(p => p.tamano === tamano);
+              if (caja) {
+                btn.querySelector('.op-precio').textContent = caja.precio;
+                btn.dataset.precio = caja.precio.replace('$', '');
+              }
+            });
+          });
 
-     // Inicializar slots al cargar
-window.addEventListener('DOMContentLoaded', () => {
-  fetch('productos.json')
-    .then(res => res.json())
-    .then(data => {
-      const cajas = data.productos.filter(p => p.tamano);
-      const botones = document.querySelectorAll('.op-tamano');
-      botones.forEach(btn => {
-        const tamano = btn.dataset.tamano;
-        const caja = cajas.find(p => p.tamano === tamano);
-        if (caja) {
-          btn.querySelector('.op-precio').textContent = caja.precio;
-          btn.dataset.precio = caja.precio.replace('$', '');
-        }
+        renderSlots();
+        actualizarResumen();
       });
-    });
 
-  renderSlots();
-  actualizarResumen();
-});
-
-    // ── Netlify Identity ───────────────────────────────
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
+      // ── Netlify Identity ──────────────────────────────────
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          } else {
+            document.location.href = "/admin/";
+          }
         });
-      } else {
-        document.location.href = "/admin/";
       }
-    });
-  }
-</script>
+
+      // ── Carrusel de productos ─────────────────────────────
+      const carrusel = document.getElementById('carrusel-productos');
+
+      function moverCarrusel(direccion) {
+        const ancho = carrusel.querySelector('.tarjeta').offsetWidth + 20;
+        carrusel.scrollLeft += ancho * direccion;
+      }
+
+      // Autoplay cada 2 segundos
+      setInterval(() => {
+        const maxScroll = carrusel.scrollWidth - carrusel.clientWidth;
+        if (carrusel.scrollLeft >= maxScroll) {
+          carrusel.scrollLeft = 0;
+        } else {
+          moverCarrusel(1);
+        }
+      }, 2000);
+    </script>
   </body>
 </html>
