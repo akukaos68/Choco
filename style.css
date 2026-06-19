@@ -712,3 +712,40 @@ footer span {
   z-index: 5;
 }
 .relleno-minus:hover { background: var(--rosa); }
+
+/* ===== CARRUSEL (si decides implementarlo) ===== */
+.carrusel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.carrusel {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  gap: 20px;
+  
+
+  .tarjeta {
+    flex: 0 0 280px;
+  }
+
+
+.carrusel-btn {
+  background: $marron;
+  color: $crema;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  &:hover {
+    background: $rosa;
+  }
+}
