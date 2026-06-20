@@ -1,16 +1,22 @@
 {
   "productos": [
     {
-      "nombre": "Tabletas simples",
+      "nombre": "Tabletas clasica",
       "precio": "$220",
       "link": "#",
-      "tamano": "3"
+      "tamano": "clasica"
+    },
+    {
+      "nombre": "Tabletas evento",
+      "precio": "$22010",
+      "link": "#",
+      "tamano": "evento"
     },
     {
       "nombre": "Caja de 9 Mendians",
       "precio": "$450",
       "link": "#",
-      "tamano": "9"
+      "tamano": "Mendians"
     },
     {
       "nombre": "Tabletas 60% Cacao",
@@ -22,7 +28,7 @@
       "nombre": "Tableta Dubai",
       "precio": "$300",
       "link": "#",
-      "tamano": "1"
+      "tamano": "dubai"
     },
     {
       "nombre": "Tab. crema de Avellanas",

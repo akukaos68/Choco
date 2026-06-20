@@ -38,7 +38,7 @@
             <div class="tarjeta-info">
               <h3>Caja Regalo</h3>
               <p>El regalo perfecto para alguien especial.</p>
-              <span class="precio">Desde $390</span><br>
+              <span class="precio" id="precio-6">$2500</span><br>
               <button class="btn" onclick="abrirConfigurador()">Armar mi caja</button>
             </div>
           </div>
@@ -47,7 +47,7 @@
             <div class="tarjeta-info">
               <h3>Tableta Dubai</h3>
               <p>Chocolate artesanal con ingredientes seleccionados.</p>
-              <span class="precio">$2500</span><br>
+              <span class="precio" id="precio-dubai">$2500</span><br>
               <a href="#contacto" class="btn">Pedir</a>
             </div>
           </div>
@@ -56,7 +56,7 @@
             <div class="tarjeta-info">
               <h3>Tableta Abuelo</h3>
               <p>Chocolate artesanal con ingredientes seleccionados.</p>
-              <span class="precio">$2500</span><br>
+              <span class="precio" id="precio-evento">$2500</span><br>
               <a href="#contacto" class="btn">Pedir</a>
             </div>
           </div>
@@ -66,7 +66,7 @@
             <div class="tarjeta-info">
               <h3>Tableta Clásica</h3>
               <p>Chocolate artesanal con ingredientes seleccionados.</p>
-              <span class="precio">$2500</span><br>
+              <span class="precio" id="precio-clasica">$6200</span><br>
               <a href="#contacto" class="btn">Pedir</a>
             </div>
           </div>
@@ -76,7 +76,7 @@
             <div class="tarjeta-info">
               <h3>Mendiants</h3>
               <p>Combinaciones únicas para los más golosos.</p>
-              <span class="precio">$6200</span><br>
+              <span class="precio" id="precio-mendiants">$6200</span><br>
               <a href="#" class="btn">Ver detalles</a>
             </div>
           </div>
@@ -443,6 +443,49 @@
         indiceActual = (indiceActual + 1) % tarjetasCarrusel.length;
         mostrarTarjeta(indiceActual);
       }, 2000);
+      // --- agregar precios
+       window.addEventListener('DOMContentLoaded', () => {
+  fetch('productos.json')
+    .then(res => res.json())
+    .then(data => {
+      const cajas = data.productos.filter(p => p.tamano);
+      const botones = document.querySelectorAll('.op-tamano');
+      botones.forEach(btn => {
+        const tamano = btn.dataset.tamano;
+        const caja = cajas.find(p => p.tamano === tamano);
+        if (caja) {
+          btn.querySelector('.op-precio').textContent = caja.precio;
+          btn.dataset.precio = caja.precio.replace('$', '');
+        }
+      });
+
+      // Agregar esto:
+      const mendiants = data.productos.find(p => p.tamano === 'Mendians');
+      if (mendiants) {
+        document.getElementById('precio-mendiants').textContent = mendiants.precio;
+      }
+      const dubai = data.productos.find(p => p.tamano === 'dubai');
+if (dubai) {
+  document.getElementById('precio-dubai').textContent = dubai.precio;
+}
+const _6 = data.productos.find(p => p.tamano === '6');
+if (_6) {
+  document.getElementById('precio-6').textContent = _6.precio;
+}
+const evento = data.productos.find(p => p.tamano === 'evento');
+if (evento) {
+  document.getElementById('precio-evento').textContent = evento.precio;
+}
+const clasica = data.productos.find(p => p.tamano === 'clasica');
+if (clasica) {
+  document.getElementById('precio-clasica').textContent = clasica.precio;
+}
+    });
+
+  renderSlots();
+  actualizarResumen();
+});
     </script>
+    
   </body>
 </html>
