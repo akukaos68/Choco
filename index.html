@@ -29,7 +29,7 @@
       <h2>Nuestros Productos</h2>
 
       <div class="carrusel-wrapper">
-        <button class="carrusel-btn izq" onclick="moverCarrusel(-1)">‹</button>
+        
 
         <div class="grid-productos carrusel" id="carrusel-productos">
 
@@ -83,7 +83,7 @@
 
         </div>
 
-        <button class="carrusel-btn der" onclick="moverCarrusel(1)">›</button>
+        
       </div>
 
       <!-- Fuera del carrusel: Lista de precios -->
@@ -428,20 +428,20 @@
 
       // ── Carrusel de productos ─────────────────────────────
       const carrusel = document.getElementById('carrusel-productos');
+      const tarjetasCarrusel = carrusel.querySelectorAll('.tarjeta');
+      let indiceActual = 0;
 
-      function moverCarrusel(direccion) {
-        const ancho = carrusel.querySelector('.tarjeta').offsetWidth + 20;
-        carrusel.scrollLeft += ancho * direccion;
+      function mostrarTarjeta(i) {
+        tarjetasCarrusel.forEach((t, idx) => {
+          t.style.display = idx === i ? 'block' : 'none';
+        });
       }
 
-      // Autoplay cada 2 segundos
+      mostrarTarjeta(indiceActual);
+
       setInterval(() => {
-        const maxScroll = carrusel.scrollWidth - carrusel.clientWidth;
-        if (carrusel.scrollLeft >= maxScroll) {
-          carrusel.scrollLeft = 0;
-        } else {
-          moverCarrusel(1);
-        }
+        indiceActual = (indiceActual + 1) % tarjetasCarrusel.length;
+        mostrarTarjeta(indiceActual);
       }, 2000);
     </script>
   </body>
