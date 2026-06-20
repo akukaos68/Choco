@@ -715,11 +715,7 @@ footer span {
 
 /* ===== CARRUSEL (si decides implementarlo) ===== */
 .carrusel-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  max-width: 1100px;
-  margin: 0 auto;
+  position: relative;
 }
 
 .carrusel {
@@ -735,7 +731,16 @@ footer span {
 
 
 .carrusel-btn {
-  background: $marron;
+  .carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  &.izq { left: 10px; }
+  &.der { right: 10px; }
+}
+  {background: $marron;
   color: $crema;
   border: none;
   border-radius: 50%;
