@@ -220,11 +220,11 @@ header h1 {
   transform: translateY(-6px);
   box-shadow: 0 10px 25px rgba(92,58,30,0.18);
 }
-
 .tarjeta img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--crema);
 }
 
 .tarjeta-info {
