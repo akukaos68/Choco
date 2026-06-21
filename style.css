@@ -736,4 +736,17 @@ footer span {
   max-width: 1000px;
   margin: 0 auto;
 }
+.dubai-theme {
+  --crema: #f7f1e6;
+  --crema-oscura: #e6d4a7;
+  --lila: #0f4d3f;
+  --lila-claro: #173f36;
+  --rosa: #d4af37;
+  --rosa-suave: #e8c96b;
+  --marron: #2c1b12;
+  --marron-oscuro: #1a120c;
+  --verde: #1d6b57;
+  --texto: #3d2d21;
+  --blanco: #fffdf8;
+}
 
