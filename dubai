@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dubai Pistachio Chocolate</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dubai-theme">
+
+<header>
+    <h1>Dubai Pistachio</h1>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Tabletas</a>
+        <a href="#contacto">Pedidos</a>
+    </nav>
+</header>
+
+<section
+    id="inicio"
+    style="background-image:url('https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=1600&q=80');
+           background-size:cover;
+           background-position:center;">
+
+    <div class="hero-contenido">
+
+        <span class="badge">
+            PREMIUM<br>
+            DUBAI EDITION
+        </span>
+
+        <h2>Chocolate Dubai</h2>
+
+        <span class="corazon">✦ ✦ ✦</span>
+
+        <p>
+            Tabletas artesanales rellenas con abundante crema
+            de pistacho y terminaciones inspiradas en el lujo
+            de Dubái.
+        </p>
+
+    </div>
+
+</section>
+
+<section id="productos">
+
+    <h2>Colección Dubai</h2>
+
+    <div class="grid-productos">
+
+        <div class="tarjeta">
+
+            <img
+            src="https://images.unsplash.com/photo-1606313564200-e75d5e30476f?auto=format&fit=crop&w=900&q=80"
+            alt="Tableta Dubai Clásica">
+
+            <div class="tarjeta-info">
+
+                <h3>Dubai Clásica</h3>
+
+                <p>
+                    Chocolate con leche relleno de crema
+                    de pistacho premium.
+                </p>
+
+                <div class="precio">USD 9.90</div>
+
+                <a href="#contacto" class="btn">
+                    Pedir
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="tarjeta">
+
+            <img
+            src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=900&q=80"
+            alt="Dubai Dark">
+
+            <div class="tarjeta-info">
+
+                <h3>Dubai Dark</h3>
+
+                <p>
+                    Chocolate negro 70% cacao con pistachos
+                    tostados seleccionados.
+                </p>
+
+                <div class="precio">USD 11.90</div>
+
+                <a href="#contacto" class="btn">
+                    Pedir
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="tarjeta">
+
+            <img
+            src="https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=900&q=80"
+            alt="Dubai White">
+
+            <div class="tarjeta-info">
+
+                <h3>Dubai White</h3>
+
+                <p>
+                    Chocolate blanco cremoso con relleno
+                    de pistacho estilo Dubái.
+                </p>
+
+                <div class="precio">USD 10.90</div>
+
+                <a href="#contacto" class="btn">
+                    Pedir
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section
+    id="contacto"
+    style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1600&q=80');
+           background-size:cover;
+           background-position:center;">
+
+    <h2>Realizá tu pedido</h2>
+
+    <p>
+        Elaboración artesanal · Pistacho premium · Producción limitada
+    </p>
+
+    <p>
+        WhatsApp:
+        <a href="https://wa.me/59800000000">
+            +598 00 000 000
+        </a>
+    </p>
+
+    <p>
+        Instagram:
+        <a href="https://instagram.com/dubaipistachio">
+            @dubaipistachio
+        </a>
+    </p>
+
+    <div class="redes">
+        <span>Pistacho</span>
+        <span>Chocolate</span>
+        <span>Dubai</span>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Dubai Pistachio · Inspirado en los sabores de Dubái
+</footer>
+
+</body>
+</html>
