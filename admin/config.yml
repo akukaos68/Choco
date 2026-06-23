@@ -20,3 +20,16 @@ collections:
               - { label: "Precio", name: "precio", widget: "string" }
               - { label: "ID", name: "tamano", widget: "string", required: true }
               - { label: "Link", name: "link", widget: "string" }
+
+  - name: "eventos"
+    label: "Página de Eventos"
+    files:
+      - label: "Evento Actual"
+        name: "evento"
+        file: "eventos.json"
+        fields:
+          - { label: "Título del Header", name: "header_titulo", widget: "string" }
+          - { label: "Texto del Cuerpo", name: "texto_body", widget: "text" }
+          - { label: "Imagen Superior Izquierda", name: "imagen_superior_izq", widget: "image" }
+          - { label: "Imagen Medio Derecha", name: "imagen_medio_derecha", widget: "image" }
+          - { label: "Imagen de Fondo (transparente)", name: "background_imagen", widget: "image" }
