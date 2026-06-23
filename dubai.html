@@ -1,173 +1,248 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dubai Pistachio Chocolate</title>
-<link rel="stylesheet" href="style.css">
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edición Especial Dubai | Olas de Cacao</title>
+<!-- Google Fonts: EB Garamond & Montserrat for a luxury feel -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Montserrat:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'cocoa-deep': '#5d3a1a',
+            'dubai-gold': '#c5a059',
+            'dubai-green': '#2d4628',
+            'surface': '#fff8f5',
+            'surface-dim': '#e1d8d4',
+            'dusty-rose': '#b68d8d'
+          },
+          fontFamily: {
+            display: ['EB Garamond', 'serif'],
+            body: ['Montserrat', 'sans-serif'],
+          },
+          spacing: {
+            'container-padding': '5%',
+            'section-gap': '5rem',
+            'element-gap': '2rem',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-typography">
+    .font-label-sm { font-size: 0.75rem; font-weight: 600; }
+    .text-headline-lg { font-size: 2.5rem; line-height: 1.2; }
+    .gold-gradient-text {
+      background: linear-gradient(to right, #c5a059, #e0c58e, #c5a059);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+<style data-purpose="backgrounds">
+    .bg-luxury-cream { background-color: #fff8f5; }
+    .bg-dubai-texture {
+      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    }
+    .parallax-section {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .dubai-footer-accent {
+      border-top: 1px solid #c5a059;
+    }
+  </style>
 </head>
-
-<body class="dubai-theme">
-
-<header>
-    <h1>Dubai Pistachio</h1>
-
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#productos">Tabletas</a>
-        <a href="#contacto">Pedidos</a>
-    </nav>
-</header>
-
-<section
-    id="inicio"
-    style="background-image:url('https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=1600&q=80');
-           background-size:cover;
-           background-position:center;">
-
-    <div class="hero-contenido">
-
-        <span class="badge">
-            PREMIUM<br>
-            DUBAI EDITION
-        </span>
-
-        <h2>Chocolate Dubai</h2>
-
-        <span class="corazon">✦ ✦ ✦</span>
-
-        <p>
-            Tabletas artesanales rellenas con abundante crema
-            de pistacho y terminaciones inspiradas en el lujo
-            de Dubái.
+<body class="bg-surface font-body text-cocoa-deep overflow-x-hidden">
+<!-- BEGIN: TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm" data-purpose="navigation-bar">
+<div class="flex justify-between items-center px-container-padding py-4 max-w-[1200px] mx-auto">
+<div class="font-display text-3xl font-bold tracking-tight text-cocoa-deep cursor-pointer" data-purpose="brand-logo">
+        Olas de Cacao
+      </div>
+<div class="hidden md:flex gap-8 font-label-sm uppercase tracking-widest items-center">
+<a class="text-on-surface-variant hover:text-dusty-rose transition-colors duration-300" href="index.html">Inicio</a>
+<a class="text-primary border-b border-cocoa-deep pb-1" href="precios.html">Productos</a>
+<a class="text-on-surface-variant hover:text-dusty-rose transition-colors duration-300" href="contacto.html">Contacto</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:scale-105 transition-transform">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</div>
+</nav>
+<!-- END: TopNavBar -->
+<!-- BEGIN: HeroSection -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-luxury-cream bg-dubai-texture" data-purpose="hero-section">
+<!-- Background Elements -->
+<div class="absolute inset-0 pointer-events-none opacity-20">
+<img alt="Dubai Skyline Background" class="absolute -right-20 top-0 h-full object-cover blur-sm md:blur-none" src="dub1.jpeg"/>
+</div>
+<div class="container mx-auto px-container-padding grid md:grid-cols-2 gap-12 items-center relative z-10">
+<div class="space-y-6" data-purpose="hero-content">
+<div class="flex items-center gap-2 mb-2">
+<span class="h-px w-8 bg-dubai-gold"></span>
+<span class="uppercase tracking-[0.3em] text-xs font-bold text-dubai-gold">Edición Especial</span>
+</div>
+<h1 class="font-display text-6xl md:text-8xl text-cocoa-deep leading-none">
+          Clásico <br/> <span class="italic font-normal">Dubai</span>
+</h1>
+<p class="text-xl md:text-2xl font-display text-cocoa-deep/80 max-w-md">
+          Inspirado en sabores que deslumbran. Chocolate amargo relleno de auténtico pistacho y crocante kadaif.
         </p>
-
-    </div>
-
+<div class="pt-6">
+<button class="bg-dubai-green text-surface px-10 py-4 rounded-full font-label-sm uppercase tracking-widest hover:bg-cocoa-deep transition-all duration-500 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+            Pedir Edición Especial
+          </button>
+</div>
+</div>
+<div class="relative group" data-purpose="hero-image">
+<div class="absolute -inset-4 bg-dubai-gold/10 rounded-2xl blur-2xl group-hover:bg-dubai-gold/20 transition-all"></div>
+<!-- Using the requested image but focusing on the bar visual -->
+<div class="relative overflow-hidden rounded-xl border border-dubai-gold/20 shadow-2xl">
+<img alt="Olas de Cacao Dubai Chocolate Bar" class="w-full h-auto scale-110 -translate-y-10" src="L-s4PRmqnUM3SHGRuZXAcgQOdoTlU7qq5DBbrlNXd4VmaMJ33gNQfFnnBWjqNRYf9HDb5oImKsX6ibgx0n7UhQ-hTpsC8c06v7wrtpMHw01SRubOQl2DtrO35WoAbMn8IfFb4htPlHGXW3knsdme"/>
+</div>
+</div>
+</div>
 </section>
-
-<section id="productos">
-
-    <h2>Colección Dubai</h2>
-
-    <div class="grid-productos">
-
-        <div class="tarjeta">
-
-            <img
-            src="https://images.unsplash.com/photo-1606313564200-e75d5e30476f?auto=format&fit=crop&w=900&q=80"
-            alt="Tableta Dubai Clásica">
-
-            <div class="tarjeta-info">
-
-                <h3>Dubai Clásica</h3>
-
-                <p>
-                    Chocolate con leche relleno de crema
-                    de pistacho premium.
-                </p>
-
-                <div class="precio">USD 9.90</div>
-
-                <a href="#contacto" class="btn">
-                    Pedir
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="tarjeta">
-
-            <img
-            src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=900&q=80"
-            alt="Dubai Dark">
-
-            <div class="tarjeta-info">
-
-                <h3>Dubai Dark</h3>
-
-                <p>
-                    Chocolate negro 70% cacao con pistachos
-                    tostados seleccionados.
-                </p>
-
-                <div class="precio">USD 11.90</div>
-
-                <a href="#contacto" class="btn">
-                    Pedir
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="tarjeta">
-
-            <img
-            src="https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=900&q=80"
-            alt="Dubai White">
-
-            <div class="tarjeta-info">
-
-                <h3>Dubai White</h3>
-
-                <p>
-                    Chocolate blanco cremoso con relleno
-                    de pistacho estilo Dubái.
-                </p>
-
-                <div class="precio">USD 10.90</div>
-
-                <a href="#contacto" class="btn">
-                    Pedir
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<!-- END: HeroSection -->
+<!-- BEGIN: ProductDetails -->
+<section class="py-section-gap bg-white" data-purpose="ingredients-section">
+<div class="max-w-[1200px] mx-auto px-container-padding text-center">
+<h2 class="font-display text-4xl mb-16 text-cocoa-deep">Una Experiencia Sensorial</h2>
+<div class="grid md:grid-cols-3 gap-12">
+<!-- Ingredient 1 -->
+<div class="flex flex-col items-center space-y-4" data-purpose="ingredient-item">
+<div class="w-20 h-20 flex items-center justify-center border border-dubai-gold rounded-full mb-4">
+<!-- Simplified Pistachio Icon Placeholder -->
+<svg class="w-10 h-10 text-dubai-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 2L4 12l8 10 8-10L12 2z"></path></svg>
+</div>
+<h3 class="font-display text-2xl">Pistachos Seleccionados</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+            Grano entero tostado a la perfección para un sabor intenso y textura cremosa.
+          </p>
+</div>
+<!-- Ingredient 2 -->
+<div class="flex flex-col items-center space-y-4" data-purpose="ingredient-item">
+<div class="w-20 h-20 flex items-center justify-center border border-dubai-gold rounded-full mb-4">
+<!-- Simplified Kadaif Icon Placeholder -->
+<svg class="w-10 h-10 text-dubai-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+</div>
+<h3 class="font-display text-2xl">Kadaif Crocante</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+            Finas hebras de masa artesanal que aportan un crujido inigualable en cada bocado.
+          </p>
+</div>
+<!-- Ingredient 3 -->
+<div class="flex flex-col items-center space-y-4" data-purpose="ingredient-item">
+<div class="w-20 h-20 flex items-center justify-center border border-dubai-gold rounded-full mb-4">
+<!-- Simplified Cacao Icon Placeholder -->
+<svg class="w-10 h-10 text-dubai-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 3v18M3 12h18"></path></svg>
+</div>
+<h3 class="font-display text-2xl">Cacao de Calidad</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">
+            Chocolate amargo artesanal Hecho con Amor en Uruguay, con notas profundas y balanceadas.
+          </p>
+</div>
+</div>
+</div>
 </section>
-
-<section
-    id="contacto"
-    style="background-image:url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1600&q=80');
-           background-size:cover;
-           background-position:center;">
-
-    <h2>Realizá tu pedido</h2>
-
-    <p>
-        Elaboración artesanal · Pistacho premium · Producción limitada
-    </p>
-
-    <p>
-        WhatsApp:
-        <a href="https://wa.me/59800000000">
-            +598 00 000 000
-        </a>
-    </p>
-
-    <p>
-        Instagram:
-        <a href="https://instagram.com/dubaipistachio">
-            @dubaipistachio
-        </a>
-    </p>
-
-    <div class="redes">
-        <span>Pistacho</span>
-        <span>Chocolate</span>
-        <span>Dubai</span>
-    </div>
-
+<!-- END: ProductDetails -->
+<!-- BEGIN: StorySection -->
+<section class="relative py-32 overflow-hidden text-surface" data-purpose="brand-story">
+<div class="absolute inset-0 bg-dubai-green"></div>
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="grid grid-cols-4 h-full w-full">
+<div class="border-r border-white/20 h-full"></div>
+<div class="border-r border-white/20 h-full"></div>
+<div class="border-r border-white/20 h-full"></div>
+<div class="h-full"></div>
+</div>
+</div>
+<div class="container mx-auto px-container-padding relative z-10 text-center max-w-3xl">
+<div class="mb-8">
+<svg class="w-12 h-12 mx-auto text-dubai-gold fill-current" viewbox="0 0 24 24">
+<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+</svg>
+</div>
+<h2 class="font-display text-4xl md:text-5xl mb-8">Un viaje de sabores inspirado en Dubai.</h2>
+<p class="text-lg md:text-xl font-body font-light italic leading-relaxed mb-12">
+        "Una combinación única de texturas y sabores que te transporta a los horizontes del lujo y la tradición artesanal."
+      </p>
+<div class="flex justify-center gap-4">
+<img alt="Badge Artisanal" class="rounded-full w-16 h-16 border-2 border-dubai-gold shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ51aUue0q4yvZqNPLohWaCOJe1U5hZzHAzUVUQ9yoX1VbBsfck2ID-F0BKSqfxRAZrs1W4YoONdTdCKtM_iiNQ1TVVoeyDdofc9pesEld24jXEYPEvsHz-2yX-5gCe3bpV5B_hYs1T_2Y8_dd0vxW8YaL3ms94lCdoUwfDVBtZCSkCvSTiq1-pjW0IWLvzEkIq9cwhpZm4G_PV6l31AvdpdMO_2HXHE1fmcVbGe8oAYbTQDbMtp42pHg7hN2fiK0tEoR5_QWK9b4E"/>
+<img alt="Badge Quality" class="rounded-full w-16 h-16 border-2 border-dubai-gold shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnYweqfY-TsaBMyp78NPiS11JulsBlSndRjds0OixyGbGtnpGH_aK-0ggGyBkLf09fvFRt3oIHBei3fk2YEsV3IIyAuWX1JK9SenXUG6hq6FfnBJ3tJbrxR04-a4HEIF25TLD2pw4eTUG1NPk8PLDuhucSX-Cw0Roi5ROv4RmOp8ckcAvekHd-uIA2GewucnUHxt4JtLHnsrtBBm67Oq7N4AsGdpCDv079aJufQOH30gFl43DYkZA__jxE_XHz6H1x_pYSEOwOfroy"/>
+</div>
+</div>
 </section>
-
-<footer>
-    © 2026 Dubai Pistachio · Inspirado en los sabores de Dubái
+<!-- END: StorySection -->
+<!-- BEGIN: ProductShowcase -->
+<section class="py-section-gap bg-surface-dim" data-purpose="cta-visual">
+<div class="max-w-[1200px] mx-auto px-container-padding">
+<div class="bg-luxury-cream rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row items-stretch border border-dubai-gold/20">
+<div class="md:w-1/2 p-12 flex flex-col justify-center space-y-6">
+<h3 class="font-display text-3xl text-dubai-green">Hecho con Amor en Uruguay</h3>
+<p class="text-cocoa-deep/70">
+            Cada tableta de nuestra Edición Especial Dubai es moldeada a mano, asegurando que el corazón de pistacho y kadaif mantenga su integridad perfecta hasta llegar a tus manos.
+          </p>
+<ul class="space-y-3 font-label-sm uppercase tracking-wider text-xs">
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-dubai-gold"></span> Sin conservantes artificiales</li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-dubai-gold"></span> Ingredientes seleccionados</li>
+<li class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-dubai-gold"></span> Calidad que se siente</li>
+</ul>
+<div class="pt-4">
+<button class="w-full md:w-auto bg-cocoa-deep text-white px-12 py-5 rounded-lg hover:bg-dubai-green transition-all shadow-md font-bold tracking-widest">
+               AÑADIR A MI CAJA
+             </button>
+</div>
+</div>
+<div class="md:w-1/2 min-h-[400px] bg-cover bg-center" style="background-image: url('dub1.jpeg');">
+<!-- Visual focal point -->
+</div>
+</div>
+</div>
+</section>
+<!-- END: ProductShowcase -->
+<!-- BEGIN: Footer -->
+<footer class="bg-surface-container py-section-gap px-container-padding border-t border-dubai-gold/20" data-purpose="main-footer">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-element-gap max-w-[1200px] mx-auto text-center md:text-left">
+<div data-purpose="footer-brand">
+<div class="font-display text-4xl text-cocoa-deep mb-4">Olas de Cacao</div>
+<p class="text-sm text-on-surface-variant max-w-xs mx-auto md:mx-0">
+          Llevando el arte del chocolate a nuevos horizontes.
+        </p>
+</div>
+<div class="flex flex-col gap-4 font-body text-sm" data-purpose="footer-links">
+<h4 class="font-bold text-cocoa-deep uppercase tracking-widest">Descubrir</h4>
+<a class="text-on-surface-variant hover:text-dusty-rose transition-colors" href="#">Privacidad</a>
+<a class="text-on-surface-variant hover:text-dusty-rose transition-colors" href="#">Términos</a>
+<a class="text-on-surface-variant hover:text-dusty-rose transition-colors" href="#">Envíos</a>
+</div>
+<div class="flex flex-col gap-4 items-center md:items-end" data-purpose="footer-social">
+<h4 class="font-bold text-cocoa-deep uppercase tracking-widest">Síguenos</h4>
+<div class="flex gap-4">
+<a class="p-2 bg-cocoa-deep text-white rounded-full hover:bg-dusty-rose transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a class="p-2 bg-cocoa-deep text-white rounded-full hover:bg-dusty-rose transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center text-xs text-on-surface-variant font-body">
+      © 2026 Olas de Cacao. Hecho con amor.
+    </div>
 </footer>
-
-</body>
-</html>
+<!-- END: Footer -->
+</body></html>
