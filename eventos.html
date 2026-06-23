@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Eventos - Olas de Cacao</title>
+  <!-- Acá después vas a linkear tu stylesheet.css -->
+</head>
+<body>
+
+  <header id="header">
+    <h1 id="header-titulo"></h1>
+  </header>
+
+  <main id="evento-container">
+    <img id="imagen-superior-izq" src="" alt="">
+
+    <div id="texto-body"></div>
+
+    <img id="imagen-medio-derecha" src="" alt="">
+  </main>
+
+  <script>
+    fetch('eventos.json')
+      .then(response => response.json())
+      .then(data => {
+
+        // Background transparente (PNG con alfa) sobre el body
+        if (data.background_imagen) {
+          document.body.style.backgroundImage = `url('${data.background_imagen}')`;
+          document.body.style.backgroundRepeat = 'no-repeat';
+          document.body.style.backgroundSize = 'cover';
+          document.body.style.backgroundPosition = 'center';
+        }
+
+        // Header
+        document.getElementById('header-titulo').textContent = data.header_titulo || '';
+
+        // Texto del body
+        document.getElementById('texto-body').textContent = data.texto_body || '';
+
+        // Imagen superior izquierda
+        if (data.imagen_superior_izq) {
+          document.getElementById('imagen-superior-izq').src = data.imagen_superior_izq;
+        }
+
+        // Imagen en medio del texto, a la derecha
+        if (data.imagen_medio_derecha) {
+          document.getElementById('imagen-medio-derecha').src = data.imagen_medio_derecha;
+        }
+
+      })
+      .catch(error => console.error('Error cargando eventos.json:', error));
+  </script>
+
+</body>
+</html>

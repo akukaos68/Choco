@@ -220,11 +220,11 @@ header h1 {
   transform: translateY(-6px);
   box-shadow: 0 10px 25px rgba(92,58,30,0.18);
 }
-
 .tarjeta img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--crema);
 }
 
 .tarjeta-info {
@@ -735,5 +735,18 @@ footer span {
 .tarjeta-precios {
   max-width: 1000px;
   margin: 0 auto;
+}
+.dubai-theme {
+  --crema: #f7f1e6;
+  --crema-oscura: #e6d4a7;
+  --lila: #0f4d3f;
+  --lila-claro: #173f36;
+  --rosa: #d4af37;
+  --rosa-suave: #e8c96b;
+  --marron: #2c1b12;
+  --marron-oscuro: #1a120c;
+  --verde: #1d6b57;
+  --texto: #3d2d21;
+  --blanco: #fffdf8;
 }
 
