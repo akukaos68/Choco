@@ -52,22 +52,22 @@
             </div>
           </div>
           <div class="tarjeta">
-            <img src="Abuelo.jfif" alt="Chocolate artesanal" />
+             <img id="imagen-portada-evento" src="" alt="Chocolate artesanal" />
             <div class="tarjeta-info">
-              <h3>Tableta Abuelo</h3>
-              <p>Chocolate artesanal con ingredientes seleccionados.</p>
+              <h3 id="titulo-evento">Tableta Abuelo</h3>
+              <p>Un momento especial para compartir.</p>
               <span class="precio" id="precio-evento">$2500</span><br>
-              <a href="#contacto" class="btn">Pedir</a>
+              <a href="eventos.html" class="btn">Pedir</a>
             </div>
           </div>
 
           <div class="tarjeta">
-            <img src="choco 0.jpg" alt="Chocolate artesanal" />
+            <img src="IMG-20260621-WA0021.jpg" alt="Chocolate artesanal" />
             <div class="tarjeta-info">
               <h3>Tableta Clásica</h3>
               <p>Chocolate artesanal con ingredientes seleccionados.</p>
               <span class="precio" id="precio-clasica">$6200</span><br>
-              <a href="#contacto" class="btn">Pedir</a>
+              <a href="clasica.html" class="btn">Pedir</a>
             </div>
           </div>
 
@@ -77,7 +77,7 @@
               <h3>Mendiants</h3>
               <p>Combinaciones únicas para los más golosos.</p>
               <span class="precio" id="precio-mendiants">$6200</span><br>
-              <a href="#" class="btn">Ver detalles</a>
+              <a href="mendiants.html" class="btn">Ver detalles</a>
             </div>
           </div>
 
@@ -485,6 +485,13 @@ if (clasica) {
   renderSlots();
   actualizarResumen();
 });
+fetch('eventos.json')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('imagen-portada-evento').src = data.imagen_portada || '';
+    document.getElementById('titulo-evento').textContent = data.header_titulo || '';
+  })
+  .catch(error => console.error('Error cargando eventos.json:', error));
     </script>
     
   </body>
