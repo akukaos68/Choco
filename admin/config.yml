@@ -33,3 +33,4 @@ collections:
           - { label: "Imagen Superior Izquierda", name: "imagen_superior_izq", widget: "image" }
           - { label: "Imagen Medio Derecha", name: "imagen_medio_derecha", widget: "image" }
           - { label: "Imagen de Fondo (transparente)", name: "background_imagen", widget: "image" }
+          - { label: "Imagen de Portada", name: "imagen_portada", widget: "image" }
