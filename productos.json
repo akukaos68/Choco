@@ -3,19 +3,19 @@
     {
       "nombre": "Tabletas clasica",
       "precio": "$220",
-      "link": "#",
+      "link": "clasica.html",
       "tamano": "clasica"
     },
     {
       "nombre": "Tabletas evento",
-      "precio": "$22010",
-      "link": "#",
+      "precio": "$600",
+      "link": "eventos.html",
       "tamano": "evento"
     },
     {
       "nombre": "Caja de 9 Mendians",
       "precio": "$450",
-      "link": "#",
+      "link": "mendiants.html",
       "tamano": "Mendians"
     },
     {
