@@ -1,0 +1,39 @@
+/* ===== Header: pegar acá los mismos estilos de #header / #header-titulo que en index.html ===== */
+
+/* ===== Layout principal ===== */
+#evento-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  overflow: hidden; /* contiene los floats */
+}
+
+#imagen-superior-izq {
+  float: left;
+  width: 280px;
+  height: auto;
+  margin: 0 24px 16px 0;
+  border-radius: 4px;
+}
+
+#imagen-medio-derecha {
+  float: right;
+  width: 240px;
+  height: auto;
+  margin: 16px 0 16px 24px;
+  border-radius: 4px;
+}
+
+#texto-body {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #3a2a20;
+  white-space: pre-line;
+}
+
+/* Limpia floats al final del contenedor */
+#evento-container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
