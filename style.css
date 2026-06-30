@@ -126,10 +126,11 @@ header h1 {
 }
 
 #inicio .hero-contenido {
+  min-height: 20vh; /* antes 35vh */
   position: relative;
   z-index: 1;
   background: rgba(255, 250, 245, 0.75);
-  padding: 40px 60px;
+  padding: 24px 40px; /* antes 40px 60px */
   border-radius: 4px;
   max-width: 600px;
 }
