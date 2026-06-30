@@ -1,8 +1,8 @@
 {
   "header_titulo": "Dia del Padre",
+  "header_fondo": "/images/53okcp.jpg",
   "texto_body": "Todos juntos haciendo palmas",
-  "imagen_portada": "/images/111560.jpg",
+  "imagen_superior_izq": "/images/choco-0.jpg",
   "imagen_medio_derecha": "/images/111563.jpg",
-  "background_imagen": "/images/53okcp.jpg",
-  "imagen_superior_izq": "/images/choco-0.jpg"
+  "background_imagen": "/images/53okcp.jpg"
 }
