@@ -1,71 +1,39 @@
-/* ===== EVENTOS - Olas de Cacao ===== */
+/* ===== Header: pegar acá los mismos estilos de #header / #header-titulo que en index.html ===== */
 
-body {
-  background-color: var(--blanco);
-}
-
-.nav-logo {
-  font-family: "Pinyon Script", cursive;
-  font-size: 3rem;
-  color: #5a3e2b; /* el marrón del logo */
-}
-
+/* ===== Layout principal ===== */
 #evento-container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 60px 40px 80px;
+  padding: 40px 24px;
   overflow: hidden; /* contiene los floats */
 }
 
-/* Imagen arriba a la izquierda, texto fluye a la derecha */
 #imagen-superior-izq {
   float: left;
   width: 280px;
-  max-width: 40%;
   height: auto;
-  margin: 4px 28px 16px 0;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(92, 58, 30, 0.15);
+  margin: 0 24px 16px 0;
+  border-radius: 4px;
 }
 
-/* Imagen en medio del texto, a la derecha */
 #imagen-medio-derecha {
   float: right;
-  width: 220px;
-  max-width: 38%;
+  width: 240px;
   height: auto;
-  margin: 16px 0 16px 28px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(92, 58, 30, 0.15);
+  margin: 16px 0 16px 24px;
+  border-radius: 4px;
 }
 
 #texto-body {
-  font-family: 'Lato', sans-serif;
   font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--texto);
+  line-height: 1.7;
+  color: #3a2a20;
   white-space: pre-line;
 }
 
-/* Limpia floats al final */
+/* Limpia floats al final del contenedor */
 #evento-container::after {
   content: "";
   display: block;
   clear: both;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 650px) {
-  #evento-container {
-    padding: 40px 20px 60px;
-  }
-
-  #imagen-superior-izq,
-  #imagen-medio-derecha {
-    float: none;
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 0 20px;
-  }
 }
