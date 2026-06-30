@@ -1,4 +1,71 @@
-/* ===== Header: pegar acá los mismos estilos de #header / #header-titulo que en index.html ===== */
+header {
+  background-color: var(--crema);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--crema-oscura);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(92,58,30,0.08);
+  background-image: url('choco 0.jpg');
+  background-size: cover;
+  background-position: center;
+  }
+  
+  nav {
+background: transparent;
+}
+
+header h1 {
+  font-family: "Pinyon Script", cursive;
+  font-size: 1.8rem;
+  color: var(--marron);
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--marron);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--rosa);
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--rosa);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.nav-log {
+  font-family: "Pinyon Script", cursive;
+  font-size: 3rem;
+  color: #5a3e2b; /* el marrón del logo */
+}/* ===== Header: pegar acá los mismos estilos de #header / #header-titulo que en index.html ===== */
 
 /* ===== Layout principal ===== */
 #evento-container {
