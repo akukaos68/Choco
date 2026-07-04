@@ -4,7 +4,6 @@
   "imagen_superior_izq": "/images/choco-0.jpg",
   "imagen_medio_derecha": "/images/111563.jpg",
   "background_imagen": "/images/53okcp.jpg",
-
   "colecciones": {
     "header_fondos": [
       "/images/53okcp.jpg"
@@ -18,5 +17,7 @@
     "derecha": [
       "/images/111563.jpg"
     ]
-  }
+  },
+  "header_titulo": "Día del padre",
+  "imagen_portada": "/images/111560.jpg"
 }
