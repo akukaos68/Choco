@@ -28,11 +28,30 @@ collections:
         name: "evento"
         file: "eventos.json"
         fields:
-          - { label: "Imagen de Header", name: "header_fondo", widget: "image" }
+          - label: "Imagen de Header"
+            name: "header_fondo"
+            widget: "image"
+            media_folder: "/images/headers"
+
           - { label: "Título del Header", name: "header_titulo", widget: "string" }
           - { label: "Texto del Cuerpo", name: "texto_body", widget: "text" }
-          - { label: "Imagen Superior Izquierda", name: "imagen_superior_izq", widget: "image" }
-          - { label: "Imagen Medio Derecha", name: "imagen_medio_derecha", widget: "image" }
-          - { label: "Imagen de Fondo (transparente)", name: "background_imagen", widget: "image" }
-          - { label: "Imagen de Portada", name: "imagen_portada", widget: "image" }
 
+          - label: "Imagen Superior Izquierda"
+            name: "imagen_superior_izq"
+            widget: "image"
+            media_folder: "/images/izquierda"
+
+          - label: "Imagen Medio Derecha"
+            name: "imagen_medio_derecha"
+            widget: "image"
+            media_folder: "/images/derecha"
+
+          - label: "Imagen de Fondo (transparente)"
+            name: "background_imagen"
+            widget: "image"
+            media_folder: "/images/backgrounds"
+
+          - label: "Imagen de Portada"
+            name: "imagen_portada"
+            widget: "image"
+            media_folder: "/images/headers"

@@ -1,9 +1,9 @@
 {
+  "header_fondo": "/images/headers/53okcp.jpg",
   "header_titulo": "Dia del Padre",
-  "header_fondo": "/images/oals-fondo.png",
   "texto_body": "Todos juntos haciendo palmas",
-  "imagen_superior_izq": "/images/choco-0.jpg",
-  "imagen_medio_derecha": "/images/111563.jpg",
-  "background_imagen": "/images/53okcp.jpg",
-  "imagen_portada": "/images/111563.jpg"
+  "imagen_superior_izq": "/images/izquierda/choco-0.jpg",
+  "imagen_medio_derecha": "/images/derecha/111563.jpg",
+  "background_imagen": "/images/backgrounds/53okcp.jpg",
+  "imagen_portada": "/images/headers/111560.jpg"
 }
