@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Olas de Cacao | Chocolate que te hace bien</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#623f1e",
+                        "surface-dim": "#e1d8d4",
+                        "on-tertiary-container": "#b5aea2",
+                        "secondary-fixed-dim": "#f4b7b7",
+                        "outline": "#82746b",
+                        "secondary": "#815252",
+                        "dusty-rose": "#D49393",
+                        "surface-container-high": "#efe6e2",
+                        "cocoa-deep": "#3E2712",
+                        "inverse-surface": "#34302c",
+                        "surface-tint": "#7d5633",
+                        "outline-variant": "#d4c3b8",
+                        "on-secondary-fixed": "#321112",
+                        "on-secondary-container": "#794b4c",
+                        "on-background": "#1e1b18",
+                        "on-primary-container": "#d6a47c",
+                        "inverse-primary": "#f0bc92",
+                        "surface": "#fff8f5",
+                        "tertiary-container": "#464238",
+                        "tertiary-fixed": "#e9e2d4",
+                        "secondary-fixed": "#ffdad9",
+                        "soft-lilac": "#E6DFF1",
+                        "surface-variant": "#e9e1dc",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#2e1500",
+                        "primary-container": "#5d3a1a",
+                        "warm-cream": "#FDF9F3",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#fdc0c0",
+                        "tertiary-fixed-dim": "#cdc6b8",
+                        "on-error": "#ffffff",
+                        "primary": "#432406",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fff8f5",
+                        "on-surface": "#1e1b18",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#f0bc92",
+                        "inverse-on-surface": "#f8efea",
+                        "tertiary": "#2f2c23",
+                        "on-secondary-fixed-variant": "#663b3c",
+                        "on-secondary": "#ffffff",
+                        "background": "#fff8f5",
+                        "on-tertiary-fixed": "#1e1b13",
+                        "on-tertiary-fixed-variant": "#4b463c",
+                        "on-surface-variant": "#50453c",
+                        "primary-fixed": "#ffdcc2",
+                        "surface-container-highest": "#e9e1dc",
+                        "surface-container": "#f5ece7",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#fbf2ed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "element-gap": "16px",
+                        "section-gap": "80px",
+                        "card-inner": "32px",
+                        "container-padding": "24px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["EB Garamond"],
+                        "price-lg": ["Manrope"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "label-sm": ["Manrope"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "product-title": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "price-lg": ["20px", {"lineHeight": "1.1", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "product-title": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; background-color: #fff8f5; color: #1e1b18; scroll-behavior: smooth; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .hero-gradient { background: linear-gradient(180deg, #FDF9F3 0%, #fff8f5 100%); }
+        .ambient-glow { box-shadow: 0 20px 40px -15px rgba(62, 39, 18, 0.08); }
+        .product-card-img { transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+        .product-card:hover .product-card-img { transform: scale(1.05); }
+        .nav-glass { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-dusty-rose/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-container-padding py-4 max-w-[1200px] mx-auto">
+<a class="font-display-lg text-headline-lg text-cocoa-deep dark:text-primary-fixed tracking-tight" href="index.html">Olas de Cacao</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-primary dark:text-primary-fixed-dim border-b border-primary dark:border-primary-fixed-dim pb-1 transition-colors duration-300" href="index.html">Inicio</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant dark:text-outline-variant hover:text-dusty-rose transition-colors duration-300" href="precios.html">Productos</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant dark:text-outline-variant hover:text-dusty-rose transition-colors duration-300" href="https://www.instagram.com/olasdecacao/">Contacto</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface hover:text-dusty-rose transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="hero-gradient pt-40 pb-section-gap px-container-padding flex flex-col items-center text-center" id="inicio">
+<div class="max-w-[800px] bg-warm-cream p-12 md:p-20 rounded-lg ambient-glow relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary/10"></div>
+<h1 class="font-display-lg text-[64px] text-cocoa-deep mb-4 leading-none">Olas de Cacao</h1>
+<div class="text-dusty-rose mb-8 text-xl">♡</div>
+<p class="font-body-md text-on-surface-variant text-xl mb-2 italic">Chocolate que te hace bien.</p>
+<p class="font-body-md text-on-surface-variant text-lg mb-10">Hecho con amor en Uruguay.</p>
+<div class="relative w-full aspect-video rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700" data-alt="A macro photograph of artisanal dark chocolate bars with a rustic texture, arranged elegantly on a warm cream-colored surface. Soft, natural light highlights the smooth sheen and organic edges of the chocolate, evoking a sense of premium quality and handcrafted care. The composition is clean and minimalist, reflecting a sophisticated boutique aesthetic with subtle cocoa-toned shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjaYwmbOMAxno--BUXMFAHNYowv4JTfa3m_wx3dBjxYjt5fe1DRNx1ctrucQ0VPMgACWI9H0HJWS6nkp4QNAdU4XlXfVz8tr8KHqrFvDEYfL5j2TcdggMdgr3sCd79p2_7qxnVfF0Wkd7l_VVBBChw1Q3xO2WSdzAdTofKcpEuy-LfpXRFJFQsExOwca_qSIizKm3wNiFNEw3kVVL5FcdzzO9HSVmfB1ZrgvlAul2d7Qk0I-T7rwIynjLQx9XJBVIJQcywHBrmNUlb"/>
+</div>
+<div class="mt-12">
+<a class="inline-block px-10 py-4 bg-primary text-warm-cream font-label-sm uppercase tracking-widest rounded-full hover:scale-105 transition-transform duration-300 shadow-lg" href="#productos">Descubrir Colección</a>
+</div>
+</div>
+</section>
+<!-- Products Section -->
+<section class="bg-soft-lilac/30 py-section-gap px-container-padding" id="productos">
+<div class="max-w-[1200px] mx-auto text-center">
+<h2 class="font-display-lg text-headline-lg text-cocoa-deep mb-2">Nuestros Productos</h2>
+<div class="text-dusty-rose mb-16 text-lg">♡</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Product Card 1 -->
+<div class="product-card flex flex-col bg-warm-cream rounded-xl overflow-hidden ambient-glow group">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="product-card-img w-full h-full object-cover" data-alt="A beautifully packaged single artisanal chocolate bar wrapped in textured off-white paper with minimalist gold foil typography. The bar sits on a soft pink velvet surface, surrounded by raw cocoa beans and delicate dried flowers. The lighting is warm and ethereal, highlighting the premium, boutique nature of the product with a gentle, romantic mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANJj8lkGJv0Kt3U5I5YjiujwMJlTsysaFl44ofMPom3C6zudpoS6F_45Y3xw2DShzGkCe6NfXcqrwC1My09kUzp9t4u12WOfa6nV8JDDCgSxwFyWa17B3hpKfdaMowyXw_ZBHun-bIq9qGx4A9LAkAhvAZHoT6jxVM4UdvvpbKTKTleOzJdSkxyc745TFj8IowKgWJIuEeI0XaEGGpyl9pVaMFk6vzSMKiaAYx25l_sLqxh8Ch2rMU4BxMroWRlOyYk1eY3HptiS3N"/>
+</div>
+<div class="p-card-inner flex flex-col items-center gap-4 py-8 px-6">
+<h3 class="font-product-title text-product-title text-cocoa-deep">Tableta Clasica</h3>
+<p class="font-body-md text-on-surface-variant">Chocolate artesanal con ingredientes seleccionados.</p>
+<span class="font-price-lg text-price-lg text-primary">$2500</span>
+<button class="mt-4 px-8 py-3 rounded-full border border-primary text-primary font-label-sm uppercase tracking-widest hover:bg-primary hover:text-warm-cream transition-all duration-300">Pedir</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="product-card flex flex-col bg-warm-cream rounded-xl overflow-hidden ambient-glow group">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="product-card-img w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ugT5fGgZ_lgFQiLw--sml1Fyevm9Fv8Y5F4Xu60aNkPZ8ZB__cNk0g2JYRrx7a7K8ESm4csRyX-W5gkN1xBcNyrm3dmuPhGTuNmTN_FcjtLZpaxuWajtKaumVYaeuNj1j0SmbLn7lcGZQQE1nk8IOm8zYNeR5g16EVH3rBKGF4zk-R05zGWqfJ5K05Uh1bJpFWIa63JMMcpU1beIqHw019xEQUQncKdvONC7qlXIi4mXOow3eRWKF6Hexay"/>
+</div>
+<div class="p-card-inner flex flex-col items-center gap-4 py-8 px-6">
+<h3 class="font-product-title text-product-title text-cocoa-deep">Dulce de Leche</h3>
+<p class="font-body-md text-on-surface-variant">Combinaciones únicas para los más golosos.</p>
+<span class="font-price-lg text-price-lg text-primary">$3200</span>
+<button class="mt-4 px-8 py-3 rounded-full border border-primary text-primary font-label-sm uppercase tracking-widest hover:bg-primary hover:text-warm-cream transition-all duration-300">Pedir</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="product-card flex flex-col bg-warm-cream rounded-xl overflow-hidden ambient-glow group">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="product-card-img w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ugDS8ZQx8r0eA_s9aXx3oniUOLVhqEl2F3pOSm0ghq4d-gGTg7N9cKdPuy5v_bOak5Dc7R6SqdqCDqtBtzd16nslSgqEWqrUW6nuRzkPZB-FuZBugaR_X-QmLlgn7vYqsUuM-O_DCcJIHrSgMTDlb9RAgMlZVgazPY_Qk68v67iGtsfuG8MZQHf6HgXDWTS7jxhIyoXhTlVsbcXEt2M0xTvG8H2tgYh4qYguISGCkixDxoM0WpOlR7q0mpk"/>
+</div>
+<div class="p-card-inner flex flex-col items-center gap-4 py-8 px-6">
+<h3 class="font-product-title text-product-title text-cocoa-deep">Tableta franui</h3>
+<p class="font-body-md text-on-surface-variant">El regalo perfecto para alguien especial.</p>
+<span class="font-price-lg text-price-lg text-primary">$5800</span>
+<button class="mt-4 px-8 py-3 rounded-full border border-primary text-primary font-label-sm uppercase tracking-widest hover:bg-primary hover:text-warm-cream transition-all duration-300">Pedir</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-gap px-container-padding relative overflow-hidden" id="contacto">
+<!-- Atmospheric background element -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-5 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="A soft, out-of-focus background pattern of botanical cocoa leaves and flowers in a watercolor style. The colors are muted earthy greens and warm creams, creating a delicate and organic texture that feels like a hand-painted mural. The overall atmosphere is serene and grounded, perfectly complementing a minimalist luxury chocolate brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVQnwlCSREFSV63pJqQ7oOqQ0EvFauvbpQSeyGqWkuzXVvY1dkLveUG19AthIki7FQaNAD3rryNiw0Sa8oxWJ1QLwUEDANuD1zMN2TmkfA3vmAxmkYBLGxwBcIwRaM7e_E2mp5VzQlxcow0lnsYpLPX_edlF8eorD9QEgu6eBYfUANn3RMSBqL3VJv7FHOccPd9mImerWAB_-PPO9w7K03StBggfzEyRR2YnSH0QEVVIU8WNCY6e6BjVqxrxdrS8XaMm89wJzFMezP"/>
+</div>
+<div class="max-w-[800px] mx-auto text-center relative z-10">
+<span class="font-label-sm text-on-surface-variant tracking-[0.3em] uppercase mb-6 block">Chocolate que te hace bien</span>
+<div class="text-dusty-rose mb-4 text-lg">♡</div>
+<h2 class="font-display-lg text-[48px] text-cocoa-deep mb-12">Contacto</h2>
+<div class="space-y-8">
+<div class="bg-warm-cream p-8 rounded-lg ambient-glow flex flex-col items-center">
+<p class="font-body-md text-on-surface-variant mb-2">Escríbinos a</p>
+<a class="font-product-title text-2xl text-primary border-b border-primary/20 hover:border-primary transition-all" href="mailto:chocolates@gmail.com">chocolates@gmail.com</a>
+</div>
+<p class="font-body-md text-on-surface-variant">o pedí por Instagram:</p>
+<div class="flex flex-col md:flex-row justify-center gap-8 items-center">
+<a class="flex items-center gap-3 font-label-sm uppercase tracking-widest text-primary hover:text-dusty-rose transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="camera">camera</span>
+<span>@OLASDECACAO</span>
+</a>
+<div class="hidden md:block w-px h-6 bg-outline-variant"></div>
+<a class="flex items-center gap-3 font-label-sm uppercase tracking-widest text-primary hover:text-dusty-rose transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="chat">chat</span>
+<span>PEDIDOS POR WHATSAPP</span>
+</a>
+</div>
+</div>
+<!-- Signature element -->
+<div class="mt-20 text-dusty-rose opacity-40">
+<p class="font-display-lg italic text-2xl">Hecho con amor</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-tertiary-container w-full py-section-gap px-container-padding">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-element-gap max-w-[1200px] mx-auto text-center md:text-left items-start">
+<div class="flex flex-col gap-4">
+<h4 class="font-display-lg text-headline-lg text-cocoa-deep dark:text-tertiary-fixed">Olas de Cacao</h4>
+<p class="font-body-md text-on-surface-variant dark:text-on-tertiary-container max-w-xs mx-auto md:mx-0">
+                    Artesanía dulce para momentos de paz. Elaboramos cada pieza con los mejores granos de cacao seleccionados.
+                </p>
+</div>
+<div class="flex flex-col gap-6 md:items-center">
+<h5 class="font-label-sm uppercase tracking-widest text-primary dark:text-tertiary-fixed">Explorar</h5>
+<nav class="flex flex-col gap-3 font-body-md">
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-dusty-rose transition-colors" href="#inicio">Inicio</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-dusty-rose transition-colors" href="#productos">Productos</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-dusty-rose transition-colors" href="#contacto">Contacto</a>
+</nav>
+</div>
+<div class="flex flex-col gap-6 md:items-end">
+<h5 class="font-label-sm uppercase tracking-widest text-primary dark:text-tertiary-fixed">Legal</h5>
+<nav class="flex flex-col gap-3 font-body-md md:items-end">
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-dusty-rose transition-colors" href="#">Privacidad</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-dusty-rose transition-colors" href="#">Términos</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-dusty-rose transition-colors" href="#">Envíos</a>
+</nav>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto mt-20 pt-8 border-t border-outline-variant/30 text-center">
+<p class="font-body-md text-on-surface-variant dark:text-on-tertiary-container text-sm">
+                © 2024 Olas de Cacao. Hecho con amor.
+            </p>
+</div>
+</footer>
+<script>
+        // Smooth reveal of elements on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-8');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section > div').forEach(el => {
+                el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
+                observer.observe(el);
+            });
+        });
+
+        // Simple parallax for hero image
+        window.addEventListener('scroll', () => {
+            const heroImg = document.querySelector('.hero-gradient img');
+            if (heroImg) {
+                const scrolled = window.pageYOffset;
+                heroImg.style.transform = `translateY(${scrolled * 0.05}px)`;
+            }
+        });
+    </script>
+</body></html>
