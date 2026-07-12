@@ -123,9 +123,6 @@
 <a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant dark:text-outline-variant hover:text-dusty-rose transition-colors duration-300" href="https://www.instagram.com/olasdecacao/">Contacto</a>
 </div>
 <div class="flex items-center gap-4">
-<button class="text-on-surface hover:text-dusty-rose transition-colors">
-<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
-</button>
 <button class="md:hidden text-on-surface">
 <span class="material-symbols-outlined" data-icon="menu">menu</span>
 </button>
@@ -158,24 +155,24 @@
 <!-- Product Card 1 -->
 <div class="product-card flex flex-col bg-warm-cream rounded-xl overflow-hidden ambient-glow group">
 <div class="aspect-[4/5] overflow-hidden relative">
-<img class="product-card-img w-full h-full object-cover" data-alt="A beautifully packaged single artisanal chocolate bar wrapped in textured off-white paper with minimalist gold foil typography. The bar sits on a soft pink velvet surface, surrounded by raw cocoa beans and delicate dried flowers. The lighting is warm and ethereal, highlighting the premium, boutique nature of the product with a gentle, romantic mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANJj8lkGJv0Kt3U5I5YjiujwMJlTsysaFl44ofMPom3C6zudpoS6F_45Y3xw2DShzGkCe6NfXcqrwC1My09kUzp9t4u12WOfa6nV8JDDCgSxwFyWa17B3hpKfdaMowyXw_ZBHun-bIq9qGx4A9LAkAhvAZHoT6jxVM4UdvvpbKTKTleOzJdSkxyc745TFj8IowKgWJIuEeI0XaEGGpyl9pVaMFk6vzSMKiaAYx25l_sLqxh8Ch2rMU4BxMroWRlOyYk1eY3HptiS3N"/>
+<img class="product-card-img w-full h-full object-cover" data-alt="A beautifully packaged single artisanal chocolate bar wrapped in textured off-white paper with minimalist gold foil typography. The bar sits on a soft pink velvet surface, surrounded by raw cocoa beans and delicate dried flowers. The lighting is warm and ethereal, highlighting the premium, boutique nature of the product with a gentle, romantic mood." src="chohoclasica.jpeg"/>
 </div>
 <div class="p-card-inner flex flex-col items-center gap-4 py-8 px-6">
 <h3 class="font-product-title text-product-title text-cocoa-deep">Tableta Clasica</h3>
 <p class="font-body-md text-on-surface-variant">Chocolate artesanal con ingredientes seleccionados.</p>
-<span class="font-price-lg text-price-lg text-primary">$2500</span>
-<button class="mt-4 px-8 py-3 rounded-full border border-primary text-primary font-label-sm uppercase tracking-widest hover:bg-primary hover:text-warm-cream transition-all duration-300">Pedir</button>
-</div>
+<span class="font-price-lg text-price-lg text-primary" id="precio-clasica">$2500</span>
+<button class="mt-4 px-8 py-3 rounded-full border border-primary text-primary font-label-sm uppercase tracking-widest hover:bg-primary hover:text-warm-cream transition-all duration-300" onclick="abrirConfigurador()">Pedir</button>
+
 </div>
 <!-- Product Card 2 -->
 <div class="product-card flex flex-col bg-warm-cream rounded-xl overflow-hidden ambient-glow group">
 <div class="aspect-[4/5] overflow-hidden relative">
-<img class="product-card-img w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ugT5fGgZ_lgFQiLw--sml1Fyevm9Fv8Y5F4Xu60aNkPZ8ZB__cNk0g2JYRrx7a7K8ESm4csRyX-W5gkN1xBcNyrm3dmuPhGTuNmTN_FcjtLZpaxuWajtKaumVYaeuNj1j0SmbLn7lcGZQQE1nk8IOm8zYNeR5g16EVH3rBKGF4zk-R05zGWqfJ5K05Uh1bJpFWIa63JMMcpU1beIqHw019xEQUQncKdvONC7qlXIi4mXOow3eRWKF6Hexay"/>
+<img class="product-card-img w-full h-full object-cover" src="chocooreo.jpeg"/>
 </div>
 <div class="p-card-inner flex flex-col items-center gap-4 py-8 px-6">
 <h3 class="font-product-title text-product-title text-cocoa-deep">Dulce de Leche</h3>
 <p class="font-body-md text-on-surface-variant">Combinaciones únicas para los más golosos.</p>
-<span class="font-price-lg text-price-lg text-primary">$3200</span>
+<span class="font-price-lg text-price-lg text-primary" id="tab-rellenas">$3200</span>
 <button class="mt-4 px-8 py-3 rounded-full border border-primary text-primary font-label-sm uppercase tracking-widest hover:bg-primary hover:text-warm-cream transition-all duration-300">Pedir</button>
 </div>
 </div>
@@ -291,5 +288,54 @@
                 heroImg.style.transform = `translateY(${scrolled * 0.05}px)`;
             }
         });
-    </script>
-</body></html>
+        // ── Cargar precios desde productos.json ──────────────
+      window.addEventListener('DOMContentLoaded', () => {
+        fetch('productos.json')
+          .then(res => res.json())
+          .then(data => {
+            const cajas = data.productos.filter(p => p.tamano);
+            const botones = document.querySelectorAll('.op-tamano');
+            botones.forEach(btn => {
+              const tamano = btn.dataset.tamano;
+              const caja = cajas.find(p => p.tamano === tamano);
+              if (caja) {
+                btn.querySelector('.op-precio').textContent = caja.precio;
+                btn.dataset.precio = caja.precio.replace('$', '');
+              }
+            });
+          });
+
+        renderSlots();
+        actualizarResumen();
+      });
+        // --- agregar precios
+       window.addEventListener('DOMContentLoaded', () => {
+  fetch('productos.json')
+    .then(res => res.json())
+    .then(data => {
+      const cajas = data.productos.filter(p => p.tamano);
+      const botones = document.querySelectorAll('.op-tamano');
+      botones.forEach(btn => {
+        const tamano = btn.dataset.tamano;
+        const caja = cajas.find(p => p.tamano === tamano);
+        if (caja) {
+          btn.querySelector('.op-precio').textContent = caja.precio;
+          btn.dataset.precio = caja.precio.replace('$', '');
+        }
+      });
+        // funciones de precio
+        const clasica = data.productos.find(p => p.tamano === 'clasica');
+if (clasica) {
+  document.getElementById('precio-clasica').textContent = clasica.precio;
+}
+
+const rellenas = data.productos.find(p => p.tamano === 'rellenas');
+if (rellenas) {
+  document.getElementById('precio-rellenas').textContent = rellenas.precio;
+}
+
+    });
+});
+</script>
+</body>
+</html>

@@ -34,7 +34,7 @@
       "nombre": "Tab. crema de Avellanas",
       "precio": "$300",
       "link": "#",
-      "tamano": "5"
+      "tamano": "rellenas"
     },
     {
       "nombre": "Caja de 6 Bombones",
@@ -46,7 +46,7 @@
       "nombre": "Tab. Franui",
       "precio": "$300",
       "link": "#",
-      "tamano": "9"
+      "tamano": "rellenas"
     },
     {
       "nombre": "Caja de 12 Bombones",
@@ -58,7 +58,7 @@
       "nombre": "Tab. Dulce de leche y oreos",
       "precio": "$300",
       "link": "#",
-      "tamano": "7"
+      "tamano": "rellenas"
     },
     {
       "nombre": "Caja de 24 Bombones",
