@@ -2,45 +2,50 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eventos - Olas de Cacao</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="eventos.css" />
-  <!-- Acá después vas a linkear tu stylesheet.css -->
 </head>
 <body>
-   <!-- ENCABEZADO -->
-    <header id="header">
-     <a href="index.html"><h1 class="nav-logo">Olas de Cacao</h1></a>
-<nav>
-      <nav>
-        <a href="index.html">Inicio</a>
-        <a href="precios.html">Productos</a>
-        <a href="contacto.html">Contacto</a>
-      </nav>
-    </header>
-
+  <!-- ENCABEZADO -->
+  <header id="header">
+    <a href="index.html" class="logo-link"><h1 class="nav-logo">Olas de Cacao</h1></a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="precios.html">Productos</a>
+      <a href="https://www.instagram.com/olasdecacao/" target="_blank">Contacto</a>
+    </nav>
+  </header>
 
   <main id="evento-container">
-    <img id="imagen-superior-izq" src="" alt="">
-
-    <div id="texto-body"></div>
-
-    <img id="imagen-medio-derecha" src="" alt="">
+    <div class="evento-header">
+      <img id="imagen-portada" src="" alt="Evento">
+    </div>
+    
+    <div class="evento-contenido">
+      <img id="imagen-superior-izq" src="" alt="Imagen del evento">
+      <div id="texto-body" class="evento-texto"></div>
+      <img id="imagen-medio-derecha" src="" alt="Imagen complementaria">
+    </div>
   </main>
 
   <script>
     fetch('eventos.json')
       .then(response => response.json())
       .then(data => {
-
-        // Background transparente (PNG con alfa) sobre el body
+        // Fondo del body
         if (data.background_imagen) {
           document.body.style.backgroundImage = `url('${data.background_imagen}')`;
           document.body.style.backgroundRepeat = 'no-repeat';
           document.body.style.backgroundSize = 'cover';
           document.body.style.backgroundPosition = 'center';
+          document.body.style.backgroundAttachment = 'fixed';
         }
 
-        // Fondo del header (editable desde el panel, ej: Halloween, Navidad)
+        // Fondo del header
         if (data.header_fondo) {
           const header = document.getElementById('header');
           header.style.backgroundImage = `url('${data.header_fondo}')`;
@@ -48,7 +53,12 @@
           header.style.backgroundPosition = 'center';
         }
 
-        // Texto del body
+        // Imagen portada
+        if (data.imagen_portada) {
+          document.getElementById('imagen-portada').src = data.imagen_portada;
+        }
+
+        // Texto principal
         document.getElementById('texto-body').textContent = data.texto_body || '';
 
         // Imagen superior izquierda
@@ -56,14 +66,12 @@
           document.getElementById('imagen-superior-izq').src = data.imagen_superior_izq;
         }
 
-        // Imagen en medio del texto, a la derecha
+        // Imagen medio derecha
         if (data.imagen_medio_derecha) {
           document.getElementById('imagen-medio-derecha').src = data.imagen_medio_derecha;
         }
-
       })
       .catch(error => console.error('Error cargando eventos.json:', error));
   </script>
-
 </body>
 </html>

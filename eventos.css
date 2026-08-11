@@ -1,5 +1,39 @@
+/* ===== OLAS DE CACAO — Eventos ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700&family=Lato:wght@300;400;700&display=swap');
+
+/* ---- Variables de color (sincronizadas con style.css) ---- */
+:root {
+  --crema:       #f5ece0;
+  --crema-oscura:#e8d5bf;
+  --lila:        #c9b8d8;
+  --lila-claro:  #ede0f5;
+  --rosa:        #e8a09a;
+  --rosa-suave:  #f2c4b0;
+  --marron:      #5c3a1e;
+  --marron-oscuro:#3b2010;
+  --verde:       #7a8c52;
+  --texto:       #4a3728;
+  --blanco:      #fffaf5;
+}
+
+/* ---- Reset básico ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--blanco);
+  color: var(--texto);
+  line-height: 1.7;
+}
+
+/* ===== HEADER / NAVEGACIÓN ===== */
 header {
-  background-color: var();
+  background-color: var(--crema);
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
@@ -8,26 +42,28 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 10px rgba(92,58,30,0.08);
-  background-image: url('choco 0.jpg');
+  box-shadow: 0 2px 10px rgba(92, 58, 30, 0.08);
   background-size: cover;
   background-position: center;
-  }
-  
-  nav {
-background: transparent;
-}
-
-header h1 {
-  font-family: "Pinyon Script", cursive;
-  font-size: 1.8rem;
-  color: var(--marron);
-  letter-spacing: 1px;
 }
 
 nav {
   display: flex;
   gap: 30px;
+  background: transparent;
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.nav-logo {
+  font-family: "Pinyon Script", cursive;
+  font-size: 3rem;
+  color: #5a3e2b;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
 }
 
 nav a {
@@ -61,46 +97,136 @@ nav a:hover::after {
   width: 100%;
 }
 
-.nav-log {
-  font-family: "Pinyon Script", cursive;
-  font-size: 3rem;
-  color: #5a3e2b; /* el marrón del logo */
-}/* ===== Header: pegar acá los mismos estilos de #header / #header-titulo que en index.html ===== */
-
-/* ===== Layout principal ===== */
+/* ===== CONTENEDOR PRINCIPAL ===== */
 #evento-container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 40px 24px;
-  overflow: hidden; /* contiene los floats */
+}
+
+.evento-header {
+  margin-bottom: 50px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(92, 58, 30, 0.12);
+}
+
+.evento-header img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.evento-contenido {
+  background: rgba(255, 250, 245, 0.95);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(92, 58, 30, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
 }
 
 #imagen-superior-izq {
-  float: left;
+  flex: 0 0 auto;
   width: 280px;
   height: auto;
-  margin: 0 24px 16px 0;
-  border-radius: 4px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(92, 58, 30, 0.1);
+  object-fit: cover;
 }
 
 #imagen-medio-derecha {
-  float: right;
+  flex: 0 0 auto;
   width: 240px;
   height: auto;
-  margin: 16px 0 16px 24px;
-  border-radius: 4px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(92, 58, 30, 0.1);
+  object-fit: cover;
+  align-self: center;
 }
 
-#texto-body {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #3a2a20;
+.evento-texto {
+  flex: 1;
+  min-width: 300px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--texto);
   white-space: pre-line;
+  word-break: break-word;
 }
 
-/* Limpia floats al final del contenedor */
-#evento-container::after {
-  content: "";
-  display: block;
-  clear: both;
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px 20px;
+  }
+
+  nav {
+    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+  }
+
+  .nav-logo {
+    font-size: 2.4rem;
+  }
+
+  .evento-contenido {
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    gap: 20px;
+  }
+
+  #imagen-superior-izq,
+  #imagen-medio-derecha {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .evento-texto {
+    min-width: 100%;
+    font-size: 1rem;
+  }
+
+  #evento-container {
+    padding: 20px 16px;
+  }
+
+  .evento-header {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 12px 16px;
+  }
+
+  .nav-logo {
+    font-size: 2rem;
+  }
+
+  nav a {
+    font-size: 0.75rem;
+    gap: 12px;
+  }
+
+  .evento-contenido {
+    padding: 16px;
+  }
+
+  .evento-texto {
+    font-size: 0.95rem;
+  }
 }
