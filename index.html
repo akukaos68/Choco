@@ -19,15 +19,24 @@
     <!-- ENCABEZADO -->
     <header>
       <h1 class="nav-logo">Olas de Cacao</h1>
-      <nav>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="navMenu">
         <a href="#inicio">Inicio</a>
         <a href="precios.html">Productos</a>
-        
-        <a href="https://www.instagram.com/olasdecacao/" target="_blank">
-  Contacto
-</a>
+        <a href="https://www.instagram.com/olasdecacao/" target="_blank">Contacto</a>
       </nav>
     </header>
+
+    <!-- Botón Instagram flotante -->
+    <a href="https://www.instagram.com/olasdecacao/" target="_blank" class="instagram-button" title="Síguenos en Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+        <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 2h8.5A3.75 3.75 0 0 1 20 7.75v8.5A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4zm8.75 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM12 6.5A5.5 5.5 0 1 0 17.5 12 5.5 5.5 0 0 0 12 6.5zm0 2A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5z"/>
+      </svg>
+    </a>
 <!-- SECCIÓN HERO -->
     <section id="inicio" class="hero">
   <div class="hero-contenido">
@@ -233,6 +242,22 @@
     </footer>
 
     <script>
+  // Menú hamburguesa
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  // Cerrar menú al hacer clic en un link
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+  
       // ── Estado ──────────────────────────────────────────
       let tamanoActual = 6;
       let precioActual = 390;

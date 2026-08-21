@@ -230,3 +230,93 @@ nav a:hover::after {
     font-size: 0.95rem;
   }
 }
+
+/* ===== HAMBURGUESA MENÚ ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 101;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--marron);
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+@media (max-width: 768px) {
+  header {
+    justify-content: space-between;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  #navMenu {
+    display: none;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    flex-direction: column;
+    background: var(--crema);
+    padding: 15px 30px;
+    border-left: 2px solid var(--crema-oscura);
+    width: auto;
+    gap: 0;
+  }
+  
+  #navMenu.active {
+    display: flex;
+  }
+  
+  #navMenu a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+/* ===== BOTÓN INSTAGRAM FLOTANTE ===== */
+.instagram-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.instagram-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.instagram-button svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
