@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precios – Olas de Cacao</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@700&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: url('Choco5.avif') center center / cover no-repeat fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      font-family: 'Nunito', sans-serif;
+      margin-top: 0;
+    }
+    .whatsapp-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.whatsapp-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5c3a1e;
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.whatsapp-button:hover {
+  background-color: #3f2715;
+  transform: translateY(-2px);
+}
+    .card {
+      background: rgba(190, 175, 210, 0.52);
+      border-radius: 18px;
+      padding: 2.2rem 2rem 1.8rem;
+      max-width: 390px;
+      width: 100%;
+    }
+    .titulo {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.4rem;
+      color: #4a2e1a;
+      text-align: center;
+      margin-bottom: 1.6rem;
+      line-height: 1;
+    }
+    ul { list-style: none; margin: 0 0 1.4rem; }
+    ul li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.45rem 0;
+    }
+    ul li::before {
+      content: "•";
+      color: #4a2e1a;
+      font-size: 1.2rem;
+      margin-right: 0.55rem;
+      flex-shrink: 0;
+    }
+    ul li a {
+      color: #4a2e1a;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      flex: 1;
+    }
+    ul li a:hover { opacity: 0.75; text-decoration: underline; }
+    ul li .precio {
+      color: #4a2e1a;
+      font-size: 1rem;
+      font-weight: 700;
+      white-space: nowrap;
+      margin-left: 1rem;
+    }
+    .sello {
+      text-align: center;
+      margin: 1rem 0 0.5rem;
+    }
+    .sello-circulo {
+      display: inline-block;
+      border: 1.5px dashed #7a5c3a;
+      border-radius: 50%;
+      padding: 0.5rem 0.9rem;
+      color: #7a5c3a;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+    .corazon { color: #c07080; font-size: 1.2rem; display: block; text-align: center; margin: 0.3rem 0; }
+    .tagline {
+      text-align: center;
+      color: #4a2e1a;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .nav-logo {
+      font-family: "Pinyon Script", cursive;
+      font-size: 2.2rem;
+      color: #5a3e2b;
+      text-decoration: none;
+      display: inline-block;
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 390px;
+    }
+    header {
+      background-color: #f5ece0;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #e8d5bf;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(92,58,30,0.08);
+      width: 100%;
+      max-width: 100%;
+    }
+    nav {
+      display: none;
+      gap: 30px;
+    }
+    nav.active {
+      display: flex;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      flex-direction: column;
+      background: #f5ece0;
+      padding: 15px 30px;
+      border-left: 2px solid #e8d5bf;
+    }
+    nav a {
+      text-decoration: none;
+      color: #5c3a1e;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.3s;
+      display: block;
+      margin: 10px 0;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #e8a09a;
+      transition: width 0.3s ease;
+    }
+    nav a:hover {
+      color: #e8a09a;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    .logo-link {
+      text-decoration: none;
+    }
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background-color: #5c3a1e;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(10px, 10px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+    .instagram-button {
+      fixed bottom-6 right-6 z-50 w-14 h-14;
+      width: 56px;
+      height: 56px;
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 50;
+      background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .instagram-button:hover {
+      transform: scale(1.1);
+    }
+    .instagram-button svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- ENCABEZADO -->
+  <header>
+    <a href="index.html" class="logo-link"><h1 class="nav-logo">Olas de Cacao</h1></a>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="navMenu">
+      <a href="index.html">Inicio</a>
+      <a href="precios.html">Productos</a>
+      <a href="contacto.html" target="_blank">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Botón Instagram flotante -->
+  <a href="https://www.instagram.com/olasdecacao/" target="_blank" class="instagram-button" title="Síguenos en Instagram">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 2h8.5A3.75 3.75 0 0 1 20 7.75v8.5A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4zm8.75 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM12 6.5A5.5 5.5 0 1 0 17.5 12 5.5 5.5 0 0 0 12 6.5zm0 2A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5z"/>
+    </svg>
+  </a>
+
+  <div class="card">
+  <img src="Mend1.jpeg" alt="Mendiants" style="width: 100%; border-radius: 12px; margin-bottom: 1.2rem;">
+
+  <span class="corazon">♡</span>
+
+  <p class="tagline">
+    ¡No te pierdas nuestras<br>
+    delicias de esta temporada!
+  </p>
+
+  <div class="whatsapp-container">
+    <a
+      href="https://wa.me/59893493926?text=Hola,%20me%20gustaría%20una%20Tableta%20Dubai."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp-button"
+    >
+      Pedir por WhatsApp
+    </a>
+  </div>
+</div>
+
+</body>
+  <script>
+  // Menú hamburguesa
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  // Cerrar menú al hacer clic en un link
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+  </script>
+  </body>
+  </html>
